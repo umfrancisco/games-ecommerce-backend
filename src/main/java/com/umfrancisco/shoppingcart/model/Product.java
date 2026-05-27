@@ -99,4 +99,10 @@ public class Product {
 	public void setImages(List<Image> images) {
 		this.images = images;
 	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", brand=" + brand + ", price=" + price + ", inventory="
+				+ inventory + ", description=" + description + ", category=" + category + ", images=" + images + "]";
+	}
 }

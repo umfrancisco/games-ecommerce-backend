@@ -1,26 +1,40 @@
 package com.umfrancisco.shoppingcart.service;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 import com.umfrancisco.shoppingcart.exception.ProductNotFoundException;
 import com.umfrancisco.shoppingcart.model.Category;
 import com.umfrancisco.shoppingcart.model.Product;
+import com.umfrancisco.shoppingcart.repository.CategoryRepository;
 import com.umfrancisco.shoppingcart.repository.ProductRepository;
 import com.umfrancisco.shoppingcart.request.ProductRequest;
 
 @Service
 public class ProductServiceImpl implements ProductService {
 	
-	private final ProductRepository repository;
+	private final ProductRepository productRepository;
+	private final CategoryRepository categoryRepository;
 	
-	public ProductServiceImpl(ProductRepository repository) {
-		this.repository = repository;
+	public ProductServiceImpl(ProductRepository productRepository, CategoryRepository categoryRepository) {
+		this.productRepository = productRepository;
+		this.categoryRepository = categoryRepository;
 	}
 
 	@Override
 	public Product add(ProductRequest request) {
-		return null;
+		Category category = Optional.ofNullable(categoryRepository.findByName(request.getCategory().getName()))
+				.orElseGet(() -> {
+					Category newCategory = new Category(request.getCategory().getName());
+					return categoryRepository.save(newCategory);
+				});
+		request.setCategory(category);
+		var product = createProduct(request, category);
+		System.out.println(LocalDateTime.now()+": "+product);
+		return productRepository.save(product);
 	}
 	
 	private Product createProduct(ProductRequest request, Category category) {
@@ -34,55 +48,70 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Product findById(Long productId) {
-		return repository.findById(productId).orElseThrow(() -> new ProductNotFoundException("Product not found"));
+		return productRepository.findById(productId).orElseThrow(() -> new ProductNotFoundException("Product not found"));
 	}
 
 	@Override
 	public void deleteById(Long productId) {
-		repository.findById(productId)
-			.ifPresentOrElse(repository::delete, () -> {
+		productRepository.findById(productId)
+			.ifPresentOrElse(productRepository::delete, () -> {
 				throw new ProductNotFoundException("Product not found");
 			});
 	}
 
 	@Override
-	public void update(Product product, Long productId) {
-		// TODO Auto-generated method stub
+	public Product update(ProductRequest request, Long productId) {
+		return productRepository.findById(productId)
+				.map(existingProduct -> updateExistingProduct(existingProduct, request))
+				.map(productRepository::save)
+				.orElseThrow(() -> new ProductNotFoundException("Product not found"));
+	}
+	
+	private Product updateExistingProduct(Product existingProduct, ProductRequest request) {
+		existingProduct.setName(request.getName());
+		existingProduct.setBrand(request.getBrand());
+		existingProduct.setPrice(request.getPrice());
+		existingProduct.setInventory(request.getInventory());
+		existingProduct.setDescription(request.getDescription());
 		
+		var category = categoryRepository.findByName(request.getCategory().getName());
+		existingProduct.setCategory(category);
+		System.out.println(LocalDateTime.now()+": "+existingProduct);
+		return existingProduct;
 	}
 
 	@Override
 	public List<Product> findAll() {
-		return repository.findAll();
+		return productRepository.findAll();
 	}
 
 	@Override
 	public List<Product> findByCategory(String category) {
-		return repository.findByCategoryName(category);
+		return productRepository.findByCategoryName(category);
 	}
 
 	@Override
 	public List<Product> findByBrand(String brand) {
-		return repository.findByBrand(brand);
+		return productRepository.findByBrand(brand);
 	}
 
 	@Override
 	public List<Product> findByCategoryAndBrand(String category, String brand) {
-		return repository.findByCategoryNameAndBrand(category, brand);
+		return productRepository.findByCategoryNameAndBrand(category, brand);
 	}
 
 	@Override
 	public List<Product> findByName(String name) {
-		return repository.findByName(name);
+		return productRepository.findByName(name);
 	}
 
 	@Override
 	public List<Product> findByBrandAndName(String brand, String name) {
-		return repository.findByBrandAndName(brand, name);
+		return productRepository.findByBrandAndName(brand, name);
 	}
 
 	@Override
 	public Long countByBrandAndName(String brand, String name) {
-		return repository.countByBrandAndName(brand, name);
+		return productRepository.countByBrandAndName(brand, name);
 	}
 }

@@ -8,7 +8,7 @@ public interface ProductService {
 	Product add(ProductRequest product);
 	Product findById(Long productId);
 	void deleteById(Long productId);
-	void update(Product product, Long productId);
+	Product update(ProductRequest product, Long productId);
 	List<Product> findAll();
 	List<Product> findByCategory(String category);
 	List<Product> findByBrand(String brand);
