@@ -11,49 +11,49 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.umfrancisco.shoppingcart.model.Product;
-import com.umfrancisco.shoppingcart.service.ProductService;
-import com.umfrancisco.shoppingcart.service.ProductServiceImpl;
+import com.umfrancisco.shoppingcart.model.Game;
+import com.umfrancisco.shoppingcart.service.GameService;
+import com.umfrancisco.shoppingcart.service.GameServiceImpl;
 
 @RestController
 @RequestMapping("/api/product")
-public class ProductController {
+public class GameController {
 	
-	private final ProductService service;
+	private final GameService service;
 	
-	public ProductController(ProductServiceImpl service) {
+	public GameController(GameServiceImpl service) {
 		this.service = service;
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<Product>> findAll() {
+	public ResponseEntity<List<Game>> findAll() {
 		return new ResponseEntity<>(service.findAll(), HttpStatus.ACCEPTED);
 	}
 	
 	@PostMapping
-	public ResponseEntity<?> save(@RequestBody Product product) {
+	public ResponseEntity<?> save(@RequestBody Game game) {
 		try {
-			return new ResponseEntity<>(service.save(product), HttpStatus.CREATED);
+			return new ResponseEntity<>(service.save(game), HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
 	@PutMapping("/{productId}")
-	public ResponseEntity<String> update(@RequestBody Product product, @PathVariable Long productId) {
+	public ResponseEntity<String> update(@RequestBody Game game, @PathVariable Long gameId) {
 		try {
-			service.update(product, productId);
-			return new ResponseEntity<>("Updated "+product, HttpStatus.ACCEPTED);
+			service.update(game, gameId);
+			return new ResponseEntity<>("Updated "+game, HttpStatus.ACCEPTED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
 	
 	@DeleteMapping("/{productId}")
-	public ResponseEntity<String> delete(@PathVariable Long productId) {
+	public ResponseEntity<String> delete(@PathVariable Long gameId) {
 		try {
-			service.deleteById(productId);
-			return new ResponseEntity<>("Deleted product with id "+productId, HttpStatus.ACCEPTED);
+			service.deleteById(gameId);
+			return new ResponseEntity<>("Deleted product with id "+gameId, HttpStatus.ACCEPTED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
