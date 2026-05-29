@@ -14,7 +14,7 @@ public abstract class Product {
 	protected Long id;
 	protected String name;
 	protected BigDecimal price;
-	protected int quantity;
+	protected Integer stock;
 	protected String description;
 	protected String imageUrl;
 	protected String[] category;
@@ -23,12 +23,11 @@ public abstract class Product {
 		
 	}
 	
-	public Product(Long id, String name, BigDecimal price, int quantity, String description, String imageUrl, String[] category) {
-		super();
+	public Product(Long id, String name, BigDecimal price, Integer stock, String description, String imageUrl, String[] category) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
-		this.quantity = quantity;
+		this.stock = stock;
 		this.description = description;
 		this.imageUrl = imageUrl;
 		this.category = category;
@@ -58,12 +57,12 @@ public abstract class Product {
 		this.price = price;
 	}
 
-	public int getQuantity() {
-		return quantity;
+	public Integer getStock() {
+		return stock;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setStock(Integer stock) {
+		this.stock = stock;
 	}
 
 	public String getDescription() {

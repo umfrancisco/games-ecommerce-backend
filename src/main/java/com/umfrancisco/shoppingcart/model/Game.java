@@ -12,13 +12,13 @@ public class Game extends Product {
 		
 	}
 
-	public Game(Long id, String name, BigDecimal price, int quantity, String description, String imageUrl, String[] category) {
-		super(id, name, price, quantity, description, imageUrl, category);
+	public Game(Long id, String name, BigDecimal price, Integer stock, String description, String imageUrl, String[] category) {
+		super(id, name, price, stock, description, imageUrl, category);
 	}
 
 	@Override
 	public String toString() {
-		return "Game [id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity + ", description="
+		return "Game [id=" + id + ", name=" + name + ", price=" + price + ", stock=" + stock + ", description="
 				+ description + ", imageUrl=" + imageUrl + ", category=" + Arrays.toString(category) + "]";
 	}
 }
