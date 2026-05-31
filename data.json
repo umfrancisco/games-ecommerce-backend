@@ -5,7 +5,8 @@
 		"stock": 6,
 		"description": "Very good game",
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/batman.png",
-		"category": ["action", "adventure"]
+		"category": "action",
+		"platforms": ["Xbox 360", "Playstation 3", "PC"]
 	},
 	{
 		"name": "Grand Theaft Auto IV",
@@ -13,7 +14,8 @@
 		"stock": 4,
 		"description": "Very good game",
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/gta-iv.png",
-		"category": ["action"]
+		"category": "action",
+		"platforms": ["Xbox 360", "Playstation 3", "PC"]
 	},
 	{
 		"name": "Red Dead Redemption",
@@ -21,7 +23,8 @@
 		"stock": 8,
 		"description": "Very good game",
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/red-dead-redemption.png",
-		"category": ["western", "adventure"]
+		"category": "adventure",
+		"platforms": ["Xbox 360", "Playstation 3", "PC"]
 	},
 	{
 		"name": "Skyrim",
@@ -29,7 +32,8 @@
 		"stock": 9,
 		"description": "Very good game",
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/skyrim.png",
-		"category": ["fantasy", "adventure"]
+		"category": "adventure"
+		"platforms": ["Xbox 360", "Playstation 3", "PC"]
 	},
 	{
 		"name": "Sleeping Dogs",
@@ -37,6 +41,7 @@
 		"stock": 6,
 		"description": "Very good game",
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/sleeping-dogs.png",
-		"category": ["action", "adventure"]
+		"category": "action",
+		"platforms": ["Xbox 360", "Playstation 3", "PC"]
 	}
 ]

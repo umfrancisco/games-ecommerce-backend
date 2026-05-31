@@ -37,6 +37,11 @@ public class GameServiceImpl implements GameService {
 	public Game findById(Long gameId) {
 		return repository.findById(gameId).get();
 	}
+	
+	@Override
+	public List<Game> findByCategory(String category) {
+		return repository.findByCategory(category.toLowerCase());
+	}
 
 	@Override
 	public void deleteById(Long gameId) {
@@ -60,3 +65,4 @@ public class GameServiceImpl implements GameService {
 		return updatedGame;
 	}
 }
+

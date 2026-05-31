@@ -8,6 +8,7 @@ public interface GameService {
 	Game save(Game game);
 	List<Game> saveAll(List<Game> games);
 	Game findById(Long gameId);
+	List<Game> findByCategory(String category);
 	void deleteById(Long gameId);
 	Game update(Game game, Long gameId);
 }

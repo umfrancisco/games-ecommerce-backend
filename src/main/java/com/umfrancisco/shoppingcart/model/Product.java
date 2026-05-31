@@ -1,6 +1,8 @@
 package com.umfrancisco.shoppingcart.model;
 
 import java.math.BigDecimal;
+import java.util.List;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,13 +19,14 @@ public abstract class Product {
 	protected Integer stock;
 	protected String description;
 	protected String imageUrl;
-	protected String[] category;
+	protected String category;
+	protected List<String> platforms;
 	
 	public Product() {
 		
 	}
 	
-	public Product(Long id, String name, BigDecimal price, Integer stock, String description, String imageUrl, String[] category) {
+	public Product(Long id, String name, BigDecimal price, Integer stock, String description, String imageUrl, String category, List<String> platforms) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
@@ -31,6 +34,7 @@ public abstract class Product {
 		this.description = description;
 		this.imageUrl = imageUrl;
 		this.category = category;
+		this.platforms = platforms;
 	}
 
 	public Long getId() {
@@ -81,11 +85,19 @@ public abstract class Product {
 		this.imageUrl = imageUrl;
 	}
 
-	public String[] getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
-	public void setCategory(String[] category) {
+	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public List<String> getPlatforms() {
+		return platforms;
+	}
+
+	public void setPlatforms(List<String> platforms) {
+		this.platforms = platforms;
 	}
 }

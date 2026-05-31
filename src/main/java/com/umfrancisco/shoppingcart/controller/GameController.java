@@ -3,6 +3,7 @@ package com.umfrancisco.shoppingcart.controller;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.umfrancisco.shoppingcart.service.GameServiceImpl;
 
 @RestController
 @RequestMapping("/api/game")
+@CrossOrigin
 public class GameController {
 	
 	private final GameService service;
@@ -43,6 +45,15 @@ public class GameController {
 	public ResponseEntity<?> saveAll(@RequestBody List<Game> games) {
 		try {
 			return new ResponseEntity<>(service.saveAll(games), HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@GetMapping("/{category}")
+	public ResponseEntity<?> findByCategory(@PathVariable String category) {
+		try {
+			return new ResponseEntity<>(service.findByCategory(category), HttpStatus.ACCEPTED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
