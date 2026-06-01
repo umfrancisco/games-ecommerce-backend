@@ -2,7 +2,6 @@ package com.umfrancisco.shoppingcart.service;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-
 import com.umfrancisco.shoppingcart.model.Game;
 import com.umfrancisco.shoppingcart.repository.GameRepository;
 
@@ -61,6 +60,7 @@ public class GameServiceImpl implements GameService {
 			updatedGame.setDescription(game.getDescription());
 			updatedGame.setImageUrl(game.getImageUrl());
 			updatedGame.setCategory(game.getCategory());
+			repository.save(updatedGame);
 		}
 		return updatedGame;
 	}

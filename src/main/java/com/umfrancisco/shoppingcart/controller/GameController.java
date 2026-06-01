@@ -32,33 +32,10 @@ public class GameController {
 		return new ResponseEntity<>(service.findAll(), HttpStatus.ACCEPTED);
 	}
 	
-	@GetMapping("/id/{gameId}")
-	public ResponseEntity<Game> findById(@PathVariable Long gameId) {
-		return new ResponseEntity<>(service.findById(gameId), HttpStatus.OK);
-	}
-	
 	@PostMapping
 	public ResponseEntity<?> save(@RequestBody Game game) {
 		try {
 			return new ResponseEntity<>(service.save(game), HttpStatus.CREATED);
-		} catch (Exception e) {
-			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-	}
-	
-	@PostMapping("/data")
-	public ResponseEntity<?> saveAll(@RequestBody List<Game> games) {
-		try {
-			return new ResponseEntity<>(service.saveAll(games), HttpStatus.CREATED);
-		} catch (Exception e) {
-			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-	}
-	
-	@GetMapping("/category/{category}")
-	public ResponseEntity<?> findByCategory(@PathVariable String category) {
-		try {
-			return new ResponseEntity<>(service.findByCategory(category), HttpStatus.ACCEPTED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -81,6 +58,29 @@ public class GameController {
 			return new ResponseEntity<>("Deleted product with id "+gameId, HttpStatus.ACCEPTED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@PostMapping("/data")
+	public ResponseEntity<?> saveAll(@RequestBody List<Game> games) {
+		try {
+			return new ResponseEntity<>(service.saveAll(games), HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@GetMapping("/{gameId}")
+	public ResponseEntity<Game> findById(@PathVariable Long gameId) {
+		return new ResponseEntity<>(service.findById(gameId), HttpStatus.OK);
+	}
+	
+	@GetMapping("/category/{category}")
+	public ResponseEntity<?> findByCategory(@PathVariable String category) {
+		try {
+			return new ResponseEntity<>(service.findByCategory(category), HttpStatus.ACCEPTED);
+		} catch (Exception e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 }
