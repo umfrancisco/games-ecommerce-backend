@@ -3,7 +3,7 @@
 		"name": "Batman Arkham Asylum",
 		"price": 90.00,
 		"stock": 6,
-		"description": "Very good game",
+		"description": "Batman: Arkham Asylum is a 2009 action-adventure game developed by Rocksteady Studios and published by Eidos Interactive in conjunction with Warner Bros. Interactive Entertainment.",
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/batman.png",
 		"category": "action",
 		"platforms": ["Xbox 360", "Playstation 3", "PC"]
@@ -12,7 +12,7 @@
 		"name": "Grand Theaft Auto IV",
 		"price": 89.90,
 		"stock": 4,
-		"description": "Very good game",
+		"description": "Grand Theft Auto IV is a 2008 action-adventure game developed by Rockstar North and published by Rockstar Games.",
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/gta-iv.png",
 		"category": "action",
 		"platforms": ["Xbox 360", "Playstation 3", "PC"]
@@ -21,27 +21,49 @@
 		"name": "Red Dead Redemption",
 		"price": 99.90,
 		"stock": 8,
-		"description": "Very good game",
+		"description": "Red Dead Redemption is a 2010 action-adventure game developed by Rockstar San Diego and published by Rockstar Games. A successor to 2004's Red Dead Revolver, it is the second game in the Red Dead series.",
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/red-dead-redemption.png",
 		"category": "adventure",
 		"platforms": ["Xbox 360", "Playstation 3", "PC"]
 	},
 	{
-		"name": "Skyrim",
+		"name": "The Elder Scrolls V: Skyrim",
 		"price": 87.90,
 		"stock": 9,
-		"description": "Very good game",
+		"description": "The Elder Scrolls V: Skyrim is a 2011 action role-playing game developed by Bethesda Game Studios and published by Bethesda Softworks.",
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/skyrim.png",
-		"category": "adventure"
+		"category": "adventure",
 		"platforms": ["Xbox 360", "Playstation 3", "PC"]
 	},
 	{
 		"name": "Sleeping Dogs",
 		"price": 70.00,
 		"stock": 6,
-		"description": "Very good game",
+		"description": "Sleeping Dogs is a 2012 action-adventure game developed by United Front Games and published by Square Enix. The game was released for PlayStation 3, Windows, and Xbox 360 in August 2012.",
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/sleeping-dogs.png",
 		"category": "action",
 		"platforms": ["Xbox 360", "Playstation 3", "PC"]
+	},
+	{
+		"name": "Assassin's Creed II",
+		"price": 89.90,
+		"stock": 8,
+		"description": "Assassin's Creed II is a 2009 action-adventure game developed by Ubisoft Montreal and published by Ubisoft.",
+		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/assassins-creed-2.png",
+		"category": "adventure",
+		"platforms": ["Xbox 360", "Playstation 3", "PC"]
+	},
+	{
+		"name": "Call of Duty: Modern Warfare 3",
+		"price": 79.90,
+		"stock": 4,
+		"description": "Call of Duty: Modern Warfare 3 is a 2011 first-person shooter game developed by Infinity Ward and Sledgehammer Games and published by Activision. ",
+		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/cod-modern-warfare-3.jpg",
+		"category": "fps",
+		"platforms": ["Xbox 360", "Playstation 3", "PC"]
 	}
 ]
+
+
+
+

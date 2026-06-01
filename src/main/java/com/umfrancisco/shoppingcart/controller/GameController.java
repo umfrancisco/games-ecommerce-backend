@@ -32,6 +32,11 @@ public class GameController {
 		return new ResponseEntity<>(service.findAll(), HttpStatus.ACCEPTED);
 	}
 	
+	@GetMapping("/id/{gameId}")
+	public ResponseEntity<Game> findById(@PathVariable Long gameId) {
+		return new ResponseEntity<>(service.findById(gameId), HttpStatus.OK);
+	}
+	
 	@PostMapping
 	public ResponseEntity<?> save(@RequestBody Game game) {
 		try {
@@ -41,7 +46,7 @@ public class GameController {
 		}
 	}
 	
-	@PostMapping("/list")
+	@PostMapping("/data")
 	public ResponseEntity<?> saveAll(@RequestBody List<Game> games) {
 		try {
 			return new ResponseEntity<>(service.saveAll(games), HttpStatus.CREATED);
@@ -50,7 +55,7 @@ public class GameController {
 		}
 	}
 	
-	@GetMapping("/{category}")
+	@GetMapping("/category/{category}")
 	public ResponseEntity<?> findByCategory(@PathVariable String category) {
 		try {
 			return new ResponseEntity<>(service.findByCategory(category), HttpStatus.ACCEPTED);
