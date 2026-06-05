@@ -11,13 +11,7 @@ public class Game extends Product {
 		
 	}
 
-	public Game(Long id, String name, BigDecimal price, Integer stock, String description, String imageUrl, String category, List<String> platforms) {
-		super(id, name, price, stock, description, imageUrl, category, platforms);
-	}
-
-	@Override
-	public String toString() {
-		return "Game [id=" + id + ", name=" + name + ", price=" + price + ", stock=" + stock + ", description="
-				+ description + ", imageUrl=" + imageUrl + ", category=" + category +", platforms" + platforms+ "]";
+	public Game(Long id, String name, BigDecimal price, Integer stock, String shortDescription, String longDescription, String imageUrl, String category, List<String> platforms) {
+		super(id, name, price, stock, shortDescription, longDescription, imageUrl, category, platforms);
 	}
 }

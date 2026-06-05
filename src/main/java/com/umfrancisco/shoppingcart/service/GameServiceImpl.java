@@ -57,7 +57,8 @@ public class GameServiceImpl implements GameService {
 			updatedGame.setName(game.getName());
 			updatedGame.setPrice(game.getPrice());
 			updatedGame.setStock(game.getStock());
-			updatedGame.setDescription(game.getDescription());
+			updatedGame.setShortDescription(game.getShortDescription());
+			updatedGame.setLongDescription(game.getLongDescription());
 			updatedGame.setImageUrl(game.getImageUrl());
 			updatedGame.setCategory(game.getCategory());
 			repository.save(updatedGame);
