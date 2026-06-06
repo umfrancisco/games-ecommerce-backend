@@ -1,40 +1,59 @@
 package com.umfrancisco.shoppingcart.service;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
-
+import com.umfrancisco.shoppingcart.model.Cart;
 import com.umfrancisco.shoppingcart.model.Game;
 import com.umfrancisco.shoppingcart.model.ProductRequest;
+import com.umfrancisco.shoppingcart.repository.CartRepository;
 import com.umfrancisco.shoppingcart.repository.RequestRepository;
 
 @Service
-public class RequestServiceImpl implements RequestService {
+public class CartServiceImpl implements CartService {
 	
-	private final RequestRepository repository;
+	private final CartRepository cartRepository;
+	private final RequestRepository requestRepository;
 	private final GameService gameService;
 	
-	public RequestServiceImpl(RequestRepository repository, GameService gameService) {
-		this.repository = repository;
+	public CartServiceImpl(CartRepository cartRepository, RequestRepository requestRepository, GameService gameService) {
+		this.cartRepository = cartRepository;
+		this.requestRepository = requestRepository;
 		this.gameService = gameService;
 	}
 
 	@Override
-	public List<ProductRequest> findAll() {
-		return repository.findAll();
+	public List<Cart> findAll() {
+		return cartRepository.findAll();
 	}
 
 	@Override
 	public ProductRequest save(ProductRequest request) {
-		Game game = gameService.findById(request.getProductId());
+		Game game = gameService.findById(request.getId());
 		if (game != null && request.getQuantity() <= game.getStock()) {
 			game.setStock(game.getStock() - request.getQuantity());
 			gameService.update(game, game.getId());
 			BigDecimal quantity = BigDecimal.valueOf(request.getQuantity());
 			request.setPrice(game.getPrice().multiply(quantity));
-			return repository.save(request);
+			return requestRepository.save(request);
 		}
 		return null;
+	}
+	
+	@Override
+	public Cart saveAll(List<ProductRequest> requests) {
+		Cart cart = new Cart();
+		List<ProductRequest> savedRequests = new ArrayList<ProductRequest>();
+		for (var request : requests) {
+			var req = save(request);
+			savedRequests.add(req);
+		}
+		cart.setProducts(savedRequests);
+		cart.setPurchaseDateTime(LocalDateTime.now());
+		cartRepository.save(cart);
+		return cart;
 	}
 
 	@Override
@@ -54,5 +73,4 @@ public class RequestServiceImpl implements RequestService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
 }

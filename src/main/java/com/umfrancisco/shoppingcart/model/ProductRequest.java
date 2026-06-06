@@ -2,17 +2,13 @@ package com.umfrancisco.shoppingcart.model;
 
 import java.math.BigDecimal;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class ProductRequest {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long requestId;
-	private Long productId;
+	private Long id;
 	private BigDecimal price;
 	private Integer quantity;
 	
@@ -20,23 +16,17 @@ public class ProductRequest {
 		
 	}
 	
-	public ProductRequest(Long requestId, Long productId, Integer quantity) {
-		this.requestId = requestId;
-		this.productId = productId;
+	public ProductRequest(Long id, BigDecimal price, Integer quantity) {
+		this.id = id;
+		this.price = price;
 		this.quantity = quantity;
 	}
 	
-	public Long getRequestId() {
-		return requestId;
+	public Long getId() {
+		return id;
 	}
-	public void setRequestId(Long requestId) {
-		this.requestId = requestId;
-	}
-	public Long getProductId() {
-		return productId;
-	}
-	public void setProductId(Long productId) {
-		this.productId = productId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public BigDecimal getPrice() {
 		return price;
@@ -50,10 +40,9 @@ public class ProductRequest {
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "ProductRequest [requestId=" + requestId + ", productId=" + productId + ", price=" + price
-				+ ", quantity=" + quantity + "]";
+		return "ProductRequest [id=" + id + ", price=" + price + ", quantity=" + quantity+ "]";
 	}
 }

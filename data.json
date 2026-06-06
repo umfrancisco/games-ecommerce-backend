@@ -36,7 +36,7 @@
 		"shortDescription": "The Elder Scrolls V: Skyrim é um jogo eletrônico de RPG de ação desenvolvido pela Bethesda Game Studios e publicado pela Bethesda Softworks.",
 		"longDescription": "The Elder Scrolls V: Skyrim é um jogo eletrônico de RPG de ação desenvolvido pela Bethesda Game Studios e publicado pela Bethesda Softworks. É o quinto jogo principal da série The Elder Scrolls, seguindo The Elder Scrolls IV: Oblivion. Foi lançado em 11 de novembro de 2011 para Microsoft Windows, PlayStation 3 e Xbox 360. É o primeiro jogo ocidental da história a receber 40/40 (nota máxima) na conceituada Famitsu. O jogo conseguiu três prêmios no VGA 2011, incluindo Jogo do Ano. Os acontecimentos do jogo passam-se duzentos anos depois da, já quase esquecida, crise de Oblivion, no ano 201 da quarta era (4E 201) na província de Skyrim, no norte de Tamriel, e 30 anos após a mais recente Grande Guerra, onde o Aldmeri Dominion e o Império lutaram arduamente, mas que quase extinguiu os humanos de Tamriel, e para evitar tal derrota, acordaram com a Aldmeri Dominion, rendendo duas forças e sujeitando-se as suas exigências.",
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/skyrim.png",
-		"category": "adventure",
+		"category": "fantasy",
 		"platforms": ["Xbox 360", "Playstation 3", "PC"]
 	},
 	{
@@ -68,7 +68,17 @@
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/cod-modern-warfare-3.jpg",
 		"category": "fps",
 		"platforms": ["Xbox 360", "Playstation 3", "PC"]
-	}
+	},
+    {
+        "name": "Dead Rising",
+        "price": 90.50,
+        "stock": 4,
+        "shortDescription": "Dead Rising é um jogo eletrônico de Survival horror com elementos de ação e aventura e RPG desenvolvido pela Capcom e produzido por Keiji Inafune.",
+        "longDescription": "Dead Rising é um jogo eletrônico de Survival horror com elementos de ação e aventura e RPG desenvolvido pela Capcom e produzido por Keiji Inafune. Originalmente o jogo foi desenvolvido como um título exclusivo para o Xbox 360, em julho de 2008, foi anunciado que o jogo estaria sendo portado para o Wii, sob o título de Dead Rising: Chop Till You Drop. A versão do jogo para o Xbox 360 foi lançada em 8 de agosto de 2006 na América do Norte e em 28 de setembro de 2006 no Japão. O jogo se tornou um sucesso, recebendo análises favoráveis e altos números de vendas. O jogo foi relançado sob a linha 'Platinum Hits', e uma versão do jogo para celulares foi realizada. Como parte do aniversário de 10 anos de Dead Rising, portes do jogo para Microsoft Windows, PlayStation 4 e Xbox One foram anunciados em julho de 2016 para serem lançado em setembro de 2016.",
+        "imageUrl": "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/dead-rising.jpg",
+        "category": "action",
+        "platforms": ["Xbox 360", "PC"]
+    }
 ]
 
 
