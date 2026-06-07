@@ -86,7 +86,7 @@ Este projeto tem fins educacionais, com foco em demonstrar:
 
 ---
 
-# English
+### English Version
 
 ---
 
