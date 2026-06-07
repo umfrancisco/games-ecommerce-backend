@@ -1,5 +1,6 @@
 package com.umfrancisco.shoppingcart.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import jakarta.persistence.Entity;
@@ -17,6 +18,7 @@ public class Cart {
 	@OneToMany
 	private List<ProductRequest> products;
 	private LocalDateTime purchaseDateTime;
+	private BigDecimal total;
 	
 	public Cart() {
 		
@@ -25,31 +27,31 @@ public class Cart {
 	public Cart(Long cartId, List<ProductRequest> products) {
 		this.cartId = cartId;
 		this.products = products;
-		this.purchaseDateTime = LocalDateTime.now();
 	}
 
 	public Long getCartId() {
 		return cartId;
 	}
-
 	public void setCartId(Long cartId) {
 		this.cartId = cartId;
 	}
-
 	public List<ProductRequest> getProducts() {
 		return products;
 	}
-
 	public void setProducts(List<ProductRequest> products) {
 		this.products = products;
 	}
-
 	public LocalDateTime getPurchaseDateTime() {
 		return purchaseDateTime;
 	}
-
 	public void setPurchaseDateTime(LocalDateTime purchaseDateTime) {
 		this.purchaseDateTime = purchaseDateTime;
+	}
+	public BigDecimal getTotal() {
+		return total;
+	}
+	public void setTotal(BigDecimal total) {
+		this.total = total;
 	}
 
 	@Override

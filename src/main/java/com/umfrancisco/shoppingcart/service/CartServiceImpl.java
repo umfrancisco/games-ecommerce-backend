@@ -42,6 +42,14 @@ public class CartServiceImpl implements CartService {
 		return null;
 	}
 	
+	public BigDecimal getTotalPrice(List<ProductRequest> requests) {
+		BigDecimal total = BigDecimal.ZERO;
+		for (var req : requests) {
+			total = total.add(req.getPrice());
+		}
+		return total;
+	}
+	
 	@Override
 	public Cart saveAll(List<ProductRequest> requests) {
 		Cart cart = new Cart();
@@ -52,6 +60,7 @@ public class CartServiceImpl implements CartService {
 		}
 		cart.setProducts(savedRequests);
 		cart.setPurchaseDateTime(LocalDateTime.now());
+		cart.setTotal(getTotalPrice(requests));
 		cartRepository.save(cart);
 		return cart;
 	}

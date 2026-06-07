@@ -2,12 +2,16 @@ package com.umfrancisco.shoppingcart.model;
 
 import java.math.BigDecimal;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class ProductRequest {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long requestId;
 	private Long id;
 	private BigDecimal price;
 	private Integer quantity;
@@ -16,12 +20,19 @@ public class ProductRequest {
 		
 	}
 	
-	public ProductRequest(Long id, BigDecimal price, Integer quantity) {
+	public ProductRequest(Long requestId, Long id, BigDecimal price, Integer quantity) {
+		this.requestId = requestId;
 		this.id = id;
 		this.price = price;
 		this.quantity = quantity;
 	}
 	
+	public Long getRequestId() {
+		return requestId;
+	}
+	public void setRequestId(Long requestId) {
+		this.requestId = requestId;
+	}
 	public Long getId() {
 		return id;
 	}
