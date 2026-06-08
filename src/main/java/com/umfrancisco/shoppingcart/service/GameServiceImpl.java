@@ -33,8 +33,8 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public Game findById(Long gameId) {
-		return repository.findById(gameId).get();
+	public Game findById(Long id) {
+		return repository.findById(id).get();
 	}
 	
 	@Override
@@ -43,8 +43,8 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public void deleteById(Long gameId) {
-		var game = repository.findById(gameId).get();
+	public void deleteById(Long id) {
+		var game = repository.findById(id).get();
 		if (game != null) {
 			repository.delete(game);
 		}
@@ -57,7 +57,7 @@ public class GameServiceImpl implements GameService {
 			updatedGame.setName(game.getName());
 			updatedGame.setPrice(game.getPrice());
 			updatedGame.setStock(game.getStock());
-			updatedGame.setShortDescription(game.getShortDescription());
+			updatedGame.setDescription(game.getDescription());
 			updatedGame.setLongDescription(game.getLongDescription());
 			updatedGame.setImageUrl(game.getImageUrl());
 			updatedGame.setCategory(game.getCategory());
