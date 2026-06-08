@@ -5,10 +5,18 @@ import com.umfrancisco.shoppingcart.model.Cart;
 import com.umfrancisco.shoppingcart.model.ItemRequest;
 
 public interface CartService {
-	List<Cart> findAll();
+
+	// save
 	ItemRequest save(ItemRequest request);
 	Cart saveAll(List<ItemRequest> requests);
+
+	// find
+	List<Cart> findAll();
 	ItemRequest findById(Long productId);
-	void deleteById(Long productId);
+	
+	// update
 	ItemRequest update(ItemRequest request, Long productId);
+
+	// delete
+	void deleteById(Long productId);
 }

@@ -23,12 +23,7 @@ public class CartServiceImpl implements CartService {
 		this.requestRepository = requestRepository;
 		this.gameService = gameService;
 	}
-
-	@Override
-	public List<Cart> findAll() {
-		return cartRepository.findAll();
-	}
-
+	
 	@Override
 	public ItemRequest save(ItemRequest request) {
 		Game game = gameService.findById(request.getId());
@@ -40,14 +35,6 @@ public class CartServiceImpl implements CartService {
 			return requestRepository.save(request);
 		}
 		return null;
-	}
-	
-	public BigDecimal getTotalPrice(List<ItemRequest> requests) {
-		BigDecimal total = BigDecimal.ZERO;
-		for (var req : requests) {
-			total = total.add(req.getPrice());
-		}
-		return total;
 	}
 	
 	@Override
@@ -66,7 +53,18 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
+	public List<Cart> findAll() {
+		return cartRepository.findAll();
+	}
+
+	@Override
 	public ItemRequest findById(Long productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public ItemRequest update(ItemRequest request, Long productId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -76,10 +74,14 @@ public class CartServiceImpl implements CartService {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public ItemRequest update(ItemRequest request, Long productId) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public BigDecimal getTotalPrice(List<ItemRequest> requests) {
+		BigDecimal total = BigDecimal.ZERO;
+		for (var req : requests) {
+			total = total.add(req.getPrice());
+		}
+		return total;
 	}
+	
 }
+

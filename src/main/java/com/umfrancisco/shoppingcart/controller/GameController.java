@@ -37,7 +37,7 @@ public class GameController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<?> save(@RequestBody Game game) {
+	public ResponseEntity<Game> save(@RequestBody Game game) {
 		Game savedGame = service.save(game);
 		return ResponseEntity.status(HttpStatus.OK).body(savedGame);
 	}

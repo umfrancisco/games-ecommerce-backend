@@ -41,15 +41,7 @@ public class GameServiceImpl implements GameService {
 	public List<Game> findByCategory(String category) {
 		return repository.findByCategory(category.toLowerCase());
 	}
-
-	@Override
-	public void deleteById(Long id) {
-		var game = repository.findById(id).get();
-		if (game != null) {
-			repository.delete(game);
-		}
-	}
-
+	
 	@Override
 	public Game update(Game game, Long productId) {
 		var updatedGame = repository.findById(productId).get();
@@ -65,5 +57,14 @@ public class GameServiceImpl implements GameService {
 		}
 		return updatedGame;
 	}
+
+	@Override
+	public void deleteById(Long id) {
+		var game = repository.findById(id).get();
+		if (game != null) {
+			repository.delete(game);
+		}
+	}
+	
 }
 
