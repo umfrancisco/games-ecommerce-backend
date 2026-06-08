@@ -1,0 +1,30 @@
+[
+	{
+		"name": "Lenovo Ideapad",
+		"price": 4229.10,
+		"stock": 20,
+		"description": "Notebook Lenovo Ideapad Slim 3 15q8x10 Snapdragon X X1-26-100 16gb 512gb SSD WINDOWS 11 Arm 15.3 - 83tw0000bo Luna Grey",
+		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/lenovo-ideapad.png"
+	},
+	{
+		"name": "Asus Vivobook",
+		"price": 3699.99,
+		"stock": 15,
+		"description": "Notebook ASUS Vivobook 15 M1502, AMD Ryzen 7 5825U, 16GB RAM, 512 GB SSD, KeepOS, Tela 15.6, FHD, Cool Silver - M1502YA-NJ612",
+		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/asus-vivobook.png"
+	},
+	{
+		"name": "MacBook Air",
+		"price": 8249.00,
+		"stock": 20,
+		"description": "MacBook Air Apple 13.6, Chip M2, CPU 8 Núcleos, GPU 10 Núcleos, 24GB, SSD 512GB, Meia-Noite - Z1HN0BZ/A",
+		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/macbook-air.png"
+	},
+	{
+		"name": "Acer Aspire",
+		"price": 3749.99,
+		"stock": 15,
+		"description": "Notebook Acer Aspire 5 A515-45-R478, AMD Ryzen 5-5500U, 16GB RAM, 512GB SSD, 15.6 FHD LED, IPS, 60Hz, Linux Gutta - NX.AYDAL.00R",
+		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/acer-aspire.png"
+	}
+]
