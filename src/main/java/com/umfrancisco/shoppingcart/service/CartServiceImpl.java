@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import com.umfrancisco.shoppingcart.model.Cart;
 import com.umfrancisco.shoppingcart.model.Game;
-import com.umfrancisco.shoppingcart.model.ProductRequest;
+import com.umfrancisco.shoppingcart.model.ItemRequest;
 import com.umfrancisco.shoppingcart.repository.CartRepository;
 import com.umfrancisco.shoppingcart.repository.RequestRepository;
 
@@ -30,7 +30,7 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public ProductRequest save(ProductRequest request) {
+	public ItemRequest save(ItemRequest request) {
 		Game game = gameService.findById(request.getId());
 		if (game != null && request.getQuantity() <= game.getStock()) {
 			game.setStock(game.getStock() - request.getQuantity());
@@ -42,7 +42,7 @@ public class CartServiceImpl implements CartService {
 		return null;
 	}
 	
-	public BigDecimal getTotalPrice(List<ProductRequest> requests) {
+	public BigDecimal getTotalPrice(List<ItemRequest> requests) {
 		BigDecimal total = BigDecimal.ZERO;
 		for (var req : requests) {
 			total = total.add(req.getPrice());
@@ -51,9 +51,9 @@ public class CartServiceImpl implements CartService {
 	}
 	
 	@Override
-	public Cart saveAll(List<ProductRequest> requests) {
+	public Cart saveAll(List<ItemRequest> requests) {
 		Cart cart = new Cart();
-		List<ProductRequest> savedRequests = new ArrayList<ProductRequest>();
+		List<ItemRequest> savedRequests = new ArrayList<ItemRequest>();
 		for (var request : requests) {
 			var req = save(request);
 			savedRequests.add(req);
@@ -66,7 +66,7 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public ProductRequest findById(Long productId) {
+	public ItemRequest findById(Long productId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -78,7 +78,7 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public ProductRequest update(ProductRequest request, Long productId) {
+	public ItemRequest update(ItemRequest request, Long productId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

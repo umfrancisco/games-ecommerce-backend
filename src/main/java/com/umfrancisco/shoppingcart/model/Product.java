@@ -95,4 +95,11 @@ public abstract class Product {
 	public void setPlatforms(List<String> platforms) {
 		this.platforms = platforms;
 	}
+	
+	@Override
+	public String toString() {
+		return "Product [Id=" + id + ", name=" + name + ", price=" + price + ", stock=" + stock
+				+ ", shortDescription=" + shortDescription + ", longDescription=" + longDescription + ", imageUrl="
+				+ imageUrl + ", category=" + category + ", platforms=" + platforms + "]";
+	}
 }
