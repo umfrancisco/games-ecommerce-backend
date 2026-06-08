@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import com.umfrancisco.shoppingcart.model.Cart;
-import com.umfrancisco.shoppingcart.model.Game;
+import com.umfrancisco.shoppingcart.model.Product;
 import com.umfrancisco.shoppingcart.model.ItemRequest;
 import com.umfrancisco.shoppingcart.repository.CartRepository;
 import com.umfrancisco.shoppingcart.repository.RequestRepository;
@@ -16,22 +16,22 @@ public class CartServiceImpl implements CartService {
 	
 	private final CartRepository cartRepository;
 	private final RequestRepository requestRepository;
-	private final GameService gameService;
+	private final ProductService productService;
 	
-	public CartServiceImpl(CartRepository cartRepository, RequestRepository requestRepository, GameService gameService) {
+	public CartServiceImpl(CartRepository cartRepository, RequestRepository requestRepository, ProductService productService) {
 		this.cartRepository = cartRepository;
 		this.requestRepository = requestRepository;
-		this.gameService = gameService;
+		this.productService = productService;
 	}
 	
 	@Override
 	public ItemRequest save(ItemRequest request) {
-		Game game = gameService.findById(request.getId());
-		if (game != null && request.getQuantity() <= game.getStock()) {
-			game.setStock(game.getStock() - request.getQuantity());
-			gameService.update(game, game.getId());
+		Product product = productService.findById(request.getId());
+		if (product != null && request.getQuantity() <= product.getStock()) {
+			product.setStock(product.getStock() - request.getQuantity());
+			productService.update(product, product.getId());
 			BigDecimal quantity = BigDecimal.valueOf(request.getQuantity());
-			request.setPrice(game.getPrice().multiply(quantity));
+			request.setPrice(product.getPrice().multiply(quantity));
 			return requestRepository.save(request);
 		}
 		return null;

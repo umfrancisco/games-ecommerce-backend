@@ -12,56 +12,56 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.umfrancisco.shoppingcart.model.Game;
-import com.umfrancisco.shoppingcart.service.GameService;
+import com.umfrancisco.shoppingcart.model.Product;
+import com.umfrancisco.shoppingcart.service.ProductService;
 
 @RestController
-@RequestMapping("/api/game")
+@RequestMapping("/api/product")
 @CrossOrigin
-public class GameController {
+public class ProductController {
 	
-	private final GameService service;
+	private final ProductService service;
 	
-	public GameController(GameService service) {
+	public ProductController(ProductService service) {
 		this.service = service;
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<Game>> findAll() {
+	public ResponseEntity<List<Product>> findAll() {
 		return ResponseEntity.status(HttpStatus.OK).body(service.findAll());
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Game> findById(@PathVariable Long id) {
+	public ResponseEntity<Product> findById(@PathVariable Long id) {
 		return ResponseEntity.status(HttpStatus.OK).body(service.findById(id));
 	}
 	
 	@PostMapping
-	public ResponseEntity<Game> save(@RequestBody Game game) {
-		Game savedGame = service.save(game);
-		return ResponseEntity.status(HttpStatus.OK).body(savedGame);
+	public ResponseEntity<Product> save(@RequestBody Product product) {
+		Product savedProduct = service.save(product);
+		return ResponseEntity.status(HttpStatus.OK).body(savedProduct);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Game> update(@RequestBody Game game, @PathVariable Long id) {
-		Game updatedGame = service.update(game, id);
-		return ResponseEntity.status(HttpStatus.OK).body(updatedGame);
+	public ResponseEntity<Product> update(@RequestBody Product product, @PathVariable Long id) {
+		Product updatedProduct = service.update(product, id);
+		return ResponseEntity.status(HttpStatus.OK).body(updatedProduct);
 	}
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> delete(@PathVariable Long id) {
 		try {
 			service.deleteById(id);
-			return new ResponseEntity<>("Deleted game with id "+id, HttpStatus.OK);
+			return new ResponseEntity<>("Deleted product with id "+id, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
 	
 	@PostMapping("/data")
-	public ResponseEntity<?> saveAll(@RequestBody List<Game> games) {
+	public ResponseEntity<?> saveAll(@RequestBody List<Product> products) {
 		try {
-			return new ResponseEntity<>(service.saveAll(games), HttpStatus.CREATED);
+			return new ResponseEntity<>(service.saveAll(products), HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}

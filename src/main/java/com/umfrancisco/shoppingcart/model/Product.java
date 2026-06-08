@@ -1,34 +1,44 @@
 package com.umfrancisco.shoppingcart.model;
 
 import java.math.BigDecimal;
+import java.util.List;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
 
-@MappedSuperclass
-public abstract class Product {
+@Entity
+public class Product {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	protected Long id;
-	protected String name;
-	protected BigDecimal price;
-	protected Integer stock;
-	protected String description;
-	protected String imageUrl;
+	private Long id;
+	private String name;
+	private BigDecimal price;
+	private Integer stock;
+	private String description;
+	@Column(columnDefinition = "TEXT")
+	private String longDescription;
+	private String category;
+	private String imageUrl;
+	private List<String> platforms;
 	
 	public Product() {
 		
 	}
 	
-	public Product(Long id, String name, BigDecimal price, Integer stock, String description, String imageUrl) {
+	public Product(Long id, String name, BigDecimal price, Integer stock, String description, String longDescription,
+			String category, String imageUrl, List<String> platforms) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.stock = stock;
 		this.description = description;
+		this.longDescription = longDescription;
+		this.category = category;
 		this.imageUrl = imageUrl;
+		this.platforms = platforms;
 	}
 	
 	public Long getId() {
@@ -61,16 +71,36 @@ public abstract class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public String getLongDescription() {
+		return longDescription;
+	}
+	public void setLongDescription(String longDescription) {
+		this.longDescription = longDescription;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 	public String getImageUrl() {
 		return imageUrl;
 	}
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+	public List<String> getPlatforms() {
+		return platforms;
+	}
+	public void setPlatforms(List<String> platforms) {
+		this.platforms = platforms;
+	}
 	
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", stock=" + stock + ", description="
-				+ description + ", imageUrl=" + imageUrl + "]";
+				+ description + ", longDescription=" + longDescription + ", category=" + category + ", imageUrl="
+				+ imageUrl + ", platforms=" + platforms + "]";
 	}
+	
 }
