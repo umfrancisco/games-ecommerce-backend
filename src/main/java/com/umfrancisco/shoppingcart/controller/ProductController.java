@@ -50,29 +50,16 @@ public class ProductController {
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> delete(@PathVariable Long id) {
-		try {
-			service.deleteById(id);
-			return new ResponseEntity<>("Deleted product with id "+id, HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-		}
+		return ResponseEntity.status(HttpStatus.OK).body("Deleted product with id "+id);
 	}
 	
 	@PostMapping("/data")
-	public ResponseEntity<?> saveAll(@RequestBody List<Product> products) {
-		try {
-			return new ResponseEntity<>(service.saveAll(products), HttpStatus.CREATED);
-		} catch (Exception e) {
-			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+	public ResponseEntity<List<Product>> saveAll(@RequestBody List<Product> products) {
+		return ResponseEntity.status(HttpStatus.OK).body(service.saveAll(products));
 	}
 	
 	@GetMapping("/category/{category}")
-	public ResponseEntity<?> findByCategory(@PathVariable String category) {
-		try {
-			return new ResponseEntity<>(service.findByCategory(category), HttpStatus.ACCEPTED);
-		} catch (Exception e) {
-			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+	public ResponseEntity<List<Product>> findByCategory(@PathVariable String category) {
+		return ResponseEntity.status(HttpStatus.OK).body(service.findByCategory(category));
 	}
 }
