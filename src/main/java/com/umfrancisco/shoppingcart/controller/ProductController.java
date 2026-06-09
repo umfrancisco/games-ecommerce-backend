@@ -62,4 +62,16 @@ public class ProductController {
 	public ResponseEntity<List<Product>> findByCategory(@PathVariable String category) {
 		return ResponseEntity.status(HttpStatus.OK).body(service.findByCategory(category));
 	}
+	
+	@GetMapping("/banner")
+	public ResponseEntity<Product> getRandomProduct() {
+		var products = service.findAll();
+		for (var p : products) {
+			if (p.getStock() > 0) {
+				return ResponseEntity.status(HttpStatus.OK).body(p);
+			}
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+	}
+	
 }
