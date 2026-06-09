@@ -13,6 +13,7 @@ public class ItemRequest {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long requestId;
 	private Long id;
+	private String name;
 	private BigDecimal price;
 	private Integer quantity;
 	
@@ -20,9 +21,10 @@ public class ItemRequest {
 		
 	}
 	
-	public ItemRequest(Long requestId, Long id, BigDecimal price, Integer quantity) {
+	public ItemRequest(Long requestId, Long id, String name, BigDecimal price, Integer quantity) {
 		this.requestId = requestId;
 		this.id = id;
+		this.name = name;
 		this.price = price;
 		this.quantity = quantity;
 	}
@@ -39,6 +41,12 @@ public class ItemRequest {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public BigDecimal getPrice() {
 		return price;
 	}
@@ -54,6 +62,6 @@ public class ItemRequest {
 	
 	@Override
 	public String toString() {
-		return "ProductRequest [id=" + id + ", price=" + price + ", quantity=" + quantity+ "]";
+		return "ProductRequest [id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity+ "]";
 	}
 }
