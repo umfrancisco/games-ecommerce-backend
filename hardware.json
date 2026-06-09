@@ -58,5 +58,35 @@
 		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/asus-tuf.png",
 		"longDescription": null,
 		"platforms": null
+	},
+	{
+		"name": "Kit Teclado e Mouse AOC",
+		"price": 50.90,
+		"stock": 10,
+		"category": "peripheral",
+		"description": "Kit Teclado e Mouse AOC Wireless Set, 2.4G, Preto - KM310 BK",
+		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/kit-mouse-teclado.png",
+		"longDescription": null,
+		"platforms": null
+	},
+	{
+		"name": "Headset Gamer XPG",
+		"price": 149.99,
+		"stock": 15,
+		"category": "peripheral",
+		"description": "Headset Gamer XPG Precog 7.1 com Driver Duplo para PC, MAC, Notebook, Playstation, XBOX e Nintendo Switch",
+		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/headset-gamer.png",
+		"longDescription": null,
+		"platforms": null
+	},
+	{
+		"name": "Mouse Gamer",
+		"price": 189.99,
+		"stock": 10,
+		"category": "peripheral",
+		"description": "Mouse Gamer Cooler Master MM712, RGB, 26000DPI, 6 Botões, USB, Preto Fosco - MM-712-KKOH1",
+		"imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/mouse-gamer.png",
+		"longDescription": null,
+		"platforms": null
 	}
 ]
