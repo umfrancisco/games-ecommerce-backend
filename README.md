@@ -6,7 +6,7 @@ This project implements the backend of a video game e-commerce application using
 
 ## Demonstration
 
-[Watch the video](./game-api-with-jwt.mp4)
+[![Demo](https://img.youtube.com/vi/bM5NW24_7Oo/0.jpg)](https://www.youtube.com/watch?v=bM5NW24_7Oo)
 
 ## 🧱 Project Structure
 
