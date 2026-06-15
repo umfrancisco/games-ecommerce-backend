@@ -4,10 +4,6 @@ This project implements the backend of a video game e-commerce application using
 
 --
 
-## 🎥 Demo
-
-[Watch the video](https://www.youtube.com/watch?v=bM5NW24_7Oo)
-
 ## 🧱 Project Structure
 
 The application is organized into well-defined layers, following best practices for separation of concerns.
