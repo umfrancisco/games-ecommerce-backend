@@ -21,14 +21,16 @@ public class Cart {
 	@JsonFormat(pattern = "yyyy-MM-dd' 'HH:mm:ss")
 	private LocalDateTime purchaseDateTime;
 	private BigDecimal total;
+	private Long userCode;
 	
 	public Cart() {
 		
 	}
 	
-	public Cart(Long cartId, List<ItemRequest> products) {
+	public Cart(Long cartId, List<ItemRequest> products, Long userCode) {
 		this.cartId = cartId;
 		this.products = products;
+		this.userCode = userCode;
 	}
 
 	public Long getCartId() {
@@ -54,6 +56,12 @@ public class Cart {
 	}
 	public void setTotal(BigDecimal total) {
 		this.total = total;
+	}
+	public Long getUserCode() {
+		return userCode;
+	}
+	public void setUserCode(Long userCode) {
+		this.userCode = userCode;
 	}
 
 	@Override

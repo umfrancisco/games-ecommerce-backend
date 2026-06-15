@@ -12,6 +12,7 @@ public interface CartService {
 
 	// find
 	List<Cart> findAll();
+	List<Cart> findByUserCode(Long userCode);
 	ItemRequest findById(Long productId);
 	
 	// update

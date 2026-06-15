@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.umfrancisco.shoppingcart.config.UserSession;
 import com.umfrancisco.shoppingcart.model.Cart;
 import com.umfrancisco.shoppingcart.model.ItemRequest;
 import com.umfrancisco.shoppingcart.service.CartService;
@@ -25,6 +26,11 @@ public class CartController {
 	@GetMapping
 	public List<Cart> findAll() {
 		return service.findAll();
+	}
+	
+	@GetMapping("/customer")
+	public List<Cart> findByCustomer() {
+		return service.findByUserCode(UserSession.ID);
 	}
 	
 	@PostMapping

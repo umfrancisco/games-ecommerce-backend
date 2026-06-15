@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
+
+import com.umfrancisco.shoppingcart.config.UserSession;
 import com.umfrancisco.shoppingcart.model.Cart;
 import com.umfrancisco.shoppingcart.model.Product;
 import com.umfrancisco.shoppingcart.model.ItemRequest;
@@ -48,6 +50,7 @@ public class CartServiceImpl implements CartService {
 		cart.setProducts(savedRequests);
 		cart.setPurchaseDateTime(LocalDateTime.now());
 		cart.setTotal(getTotalPrice(requests));
+		cart.setUserCode(UserSession.ID);
 		cartRepository.save(cart);
 		return cart;
 	}
@@ -55,6 +58,11 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public List<Cart> findAll() {
 		return cartRepository.findAll();
+	}
+	
+	@Override
+	public List<Cart> findByUserCode(Long userCode) {
+		return cartRepository.findByUserCode(userCode);
 	}
 
 	@Override
