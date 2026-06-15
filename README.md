@@ -4,6 +4,10 @@ This project implements the backend of a video game e-commerce application using
 
 ---
 
+## Demonstration
+
+[Watch the video](./game-api-with-jwt.mp4)
+
 ## 🧱 Project Structure
 
 The application is organized into well-defined layers, following best practices for separation of concerns.
