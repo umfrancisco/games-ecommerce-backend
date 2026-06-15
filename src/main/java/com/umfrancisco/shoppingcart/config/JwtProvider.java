@@ -25,7 +25,6 @@ public class JwtProvider {
                 .claim( "authorities",roles)
                 .signWith(key)
                 .compact();
-        System.out.println("Token for parsing in JwtProvider: " + jwt);
         return jwt;
     }
     
@@ -42,7 +41,6 @@ public class JwtProvider {
         try {
         	Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
             String email = String.valueOf(claims.get("email"));
-            System.out.println("Email extracted from JWT: " + claims);
             return email;
         } catch (Exception e) {
             System.err.println("Error extracting email from JWT: " + e.getMessage());

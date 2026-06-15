@@ -50,7 +50,6 @@ public class UserController {
 		SecurityContextHolder.getContext().setAuthentication(auth);
 		String token = JwtProvider.generateToken(auth);
 //		AuthResponse response = new AuthResponse(token);
-		System.out.println("Login ok");
 		return ResponseEntity.status(HttpStatus.OK).body(token);
 	}
 	
