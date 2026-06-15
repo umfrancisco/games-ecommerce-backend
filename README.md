@@ -2,11 +2,11 @@
 
 This project implements the backend of a video game e-commerce application using the **MVC (Model-View-Controller)** architectural pattern. The goal is to simulate the flow of a purchasing system, from product management to order completion.
 
----
+--
 
-## Demonstration
+## 🎥 Demo
 
-[![Demo](https://img.youtube.com/vi/bM5NW24_7Oo/0.jpg)](https://www.youtube.com/watch?v=bM5NW24_7Oo)
+[▶️  Watch the video](https://www.youtube.com/watch?v=bM5NW24_7Oo)
 
 ## 🧱 Project Structure
 
