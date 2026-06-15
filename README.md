@@ -6,7 +6,7 @@ This project implements the backend of a video game e-commerce application using
 
 ## 🎥 Demo
 
-[▶️  Watch the video](https://www.youtube.com/watch?v=bM5NW24_7Oo)
+[Watch the video](https://www.youtube.com/watch?v=bM5NW24_7Oo)
 
 ## 🧱 Project Structure
 
