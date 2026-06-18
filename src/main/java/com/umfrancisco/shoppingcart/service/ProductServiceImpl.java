@@ -1,7 +1,9 @@
 package com.umfrancisco.shoppingcart.service;
 
 import java.util.List;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 import com.umfrancisco.shoppingcart.model.Product;
 import com.umfrancisco.shoppingcart.repository.ProductRepository;
 
@@ -34,7 +36,8 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Product findById(Long id) {
-		return repository.findById(id).get();
+		return repository.findById(id)
+				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found"));
 	}
 	
 	@Override
@@ -44,7 +47,8 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public Product update(Product product, Long id) {
-		var updatedGame = repository.findById(id).get();
+		var updatedGame = repository.findById(id)
+				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found"));
 		if (updatedGame != null) {
 			updatedGame.setName(product.getName());
 			updatedGame.setPrice(product.getPrice());

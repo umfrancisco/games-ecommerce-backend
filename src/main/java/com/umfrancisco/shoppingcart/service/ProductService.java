@@ -1,7 +1,6 @@
 package com.umfrancisco.shoppingcart.service;
 
 import java.util.List;
-
 import com.umfrancisco.shoppingcart.model.Product;
 
 public interface ProductService {

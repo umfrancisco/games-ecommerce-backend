@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 import com.umfrancisco.shoppingcart.model.Product;
 import com.umfrancisco.shoppingcart.service.ProductService;
 
@@ -37,15 +38,23 @@ public class ProductController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Product> save(@RequestBody Product product) {
-		Product savedProduct = service.save(product);
-		return ResponseEntity.status(HttpStatus.OK).body(savedProduct);
+	public ResponseEntity<String> save(@RequestBody Product product) {
+		try {
+			Product savedProduct = service.save(product);
+			return ResponseEntity.status(HttpStatus.OK).body(savedProduct.toString());
+		} catch (ResponseStatusException e) {
+			return new ResponseEntity<>(e.getReason(), e.getStatusCode());
+		}
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Product> update(@RequestBody Product product, @PathVariable Long id) {
-		Product updatedProduct = service.update(product, id);
-		return ResponseEntity.status(HttpStatus.OK).body(updatedProduct);
+	public ResponseEntity<String> update(@RequestBody Product product, @PathVariable Long id) {
+		try {
+			Product updatedProduct = service.update(product, id);
+			return ResponseEntity.status(HttpStatus.OK).body(updatedProduct.toString());			
+		} catch (ResponseStatusException e) {
+			return new ResponseEntity<>(e.getReason(), e.getStatusCode());
+		}
 	}
 	
 	@DeleteMapping("/{id}")
