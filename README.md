@@ -57,6 +57,42 @@ These classes are responsible for applying business rules, validations, and orch
 
 ---
 
+## 📡 Endpoints
+
+### FIND ALL PRODUCTs
+GET /api/product
+
+### FIND PRODUCT BY ID
+GET /api/product/{id}
+
+### FIND PRODUCT BY CATEGORY
+GET /api/product/category/{category}
+
+### SAVE PRODUCT
+POST /api/product
+
+### UPDATE PRODUCT
+PUT /api/product/{id}
+
+### DELETE PRODUCT
+DELETE /api/product/{id}
+
+---
+
+## JSON Request Example
+
+{
+    "name": "game",
+    "price": 100.0,
+    "stock": 10,
+    "description": "lorem ipsum",
+    "longDescription": "lorem ipsum",
+    "category": "action",
+    "imageUrl": "www.image.com/image.png",
+    "platforms": ["hello", "world"]
+}
+
+
 ## 🚀 Next Steps
 
 * Implement authentication and authorization
