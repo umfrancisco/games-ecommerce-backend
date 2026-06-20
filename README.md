@@ -73,23 +73,14 @@ This project is a backend service developed using Spring Boot. It exposes REST A
 
 ## Endpoints
 
-### FIND ALL PRODUCTs
-GET /api/product
-
-### FIND PRODUCT BY ID
-GET /api/product/{id}
-
-### FIND PRODUCT BY CATEGORY
-GET /api/product/category/{category}
-
-### SAVE PRODUCT
-POST /api/product
-
-### UPDATE PRODUCT
-PUT /api/product/{id}
-
-### DELETE PRODUCT
-DELETE /api/product/{id}
+| Method | Endpoint                         | Description         |
+| ------ | -------------------------------- | ------------------- |
+| GET    | /api/product                     | Get all products    |
+| GET    | /api/product/{id}                | Get product by ID   |
+| GET    | /api/product/category/{category} | Get product by ID   |
+| POST   | /api/product                     | Create new product  |
+| PUT    | /api/product/{id}                | Update product      |
+| DELETE | /api/product/{id}                | Delete item         |
 
 ## JSON Request Example
 
