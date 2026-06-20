@@ -81,6 +81,7 @@ DELETE /api/product/{id}
 
 ## JSON Request Example
 
+<pre>
 {
     "name": "game",
     "price": 100.0,
@@ -91,6 +92,7 @@ DELETE /api/product/{id}
     "imageUrl": "www.image.com/image.png",
     "platforms": ["hello", "world"]
 }
+</pre>
 
 
 ## 🚀 Next Steps
