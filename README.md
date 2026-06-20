@@ -93,6 +93,7 @@ DELETE /api/product/{id}
 
 ## JSON Request Example
 
+### Game Example
 <pre>
 {
     "name": "game",
@@ -105,6 +106,49 @@ DELETE /api/product/{id}
     "platforms": ["hello", "world"]
 }
 </pre>
+
+### Hardware example
+<pre>
+{
+    "name": "hardware",
+    "price": 100.0,
+    "stock": 10,
+    "description": "lorem ipsum",
+    "longDescription": null,
+    "category": "notebook",
+    "imageUrl": "www.image.com/image.png",
+    "platforms": null
+}
+</pre>
+
+## Setup & Installation
+
+### 1. Clone the repository
+git clone https://github.com/umfrancisco/shopping-cart-backend  
+cd shopping-cart-backend  
+
+### 2. Configure environment variables
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/your_db  
+spring.datasource.username=postgres  
+spring.datasource.password=secret  
+
+spring.jpa.hibernate.ddl-auto=update  
+server.port=8080  
+
+### 3. Run the application
+
+Using Spring Boot:  
+
+./mvnw spring-boot:run  
+
+Build using Maven:  
+
+mvn clean package  
+java -jar target/shopping-cart-0.0.1-SNAPSHOT.jar  
+
+## Author
+Developed by Francisco Guitler
 
 
 
