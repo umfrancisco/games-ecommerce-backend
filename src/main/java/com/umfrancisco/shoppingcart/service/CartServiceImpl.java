@@ -4,7 +4,10 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 import com.umfrancisco.shoppingcart.config.UserSession;
 import com.umfrancisco.shoppingcart.model.Cart;
 import com.umfrancisco.shoppingcart.model.Product;
@@ -66,20 +69,35 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public ItemRequest findById(Long productId) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<ItemRequest> optionalRequest = requestRepository.findById(productId);
+		if (optionalRequest.isPresent()) {
+			return optionalRequest.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Item Request not found");
+		}
 	}
 	
 	@Override
 	public ItemRequest update(ItemRequest request, Long productId) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<ItemRequest> optionalRequest = requestRepository.findById(productId);
+		if (optionalRequest.isPresent()) {
+			var req = optionalRequest.get();
+			req.setId(productId);
+			req.setName(request.getName());
+			req.setPrice(request.getPrice());
+			req.setQuantity(request.getQuantity());
+			requestRepository.save(req);
+			return req;
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Item Request not found");
+		}
 	}
 
 	@Override
 	public void deleteById(Long productId) {
-		// TODO Auto-generated method stub
-		
+		if (requestRepository.existsById(productId)) {
+			requestRepository.deleteById(productId);
+		}
 	}
 	
 	public BigDecimal getTotalPrice(List<ItemRequest> requests) {
