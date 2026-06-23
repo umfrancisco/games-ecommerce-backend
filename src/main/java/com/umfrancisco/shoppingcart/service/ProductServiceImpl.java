@@ -1,6 +1,7 @@
 package com.umfrancisco.shoppingcart.service;
 
 import java.util.List;
+import java.util.Optional;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -23,10 +24,7 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public List<Product> saveAll(List<Product> products) {
-		for (var product : products) {
-			save(product);
-		}
-		return products;
+		return repository.saveAll(products);
 	}
 	
 	@Override
@@ -36,8 +34,12 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Product findById(Long id) {
-		return repository.findById(id)
-				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found"));
+		Optional<Product> optionalProduct = repository.findById(id);
+		if (optionalProduct.isPresent()) {
+			return optionalProduct.get();			
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found");
+		}
 	}
 	
 	@Override
@@ -47,26 +49,30 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public Product update(Product product, Long id) {
-		var updatedGame = repository.findById(id)
-				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found"));
-		if (updatedGame != null) {
-			updatedGame.setName(product.getName());
-			updatedGame.setPrice(product.getPrice());
-			updatedGame.setStock(product.getStock());
-			updatedGame.setDescription(product.getDescription());
-			updatedGame.setLongDescription(product.getLongDescription());
-			updatedGame.setImageUrl(product.getImageUrl());
-			updatedGame.setCategory(product.getCategory());
-			repository.save(updatedGame);
+		Optional<Product> optionalProduct = repository.findById(id);
+		if (optionalProduct.isPresent()) {
+			Product updatedProduct = optionalProduct.get();
+			updatedProduct.setName(product.getName());
+			updatedProduct.setPrice(product.getPrice());
+			updatedProduct.setStock(product.getStock());
+			updatedProduct.setDescription(product.getDescription());
+			updatedProduct.setLongDescription(product.getLongDescription());
+			updatedProduct.setImageUrl(product.getImageUrl());
+			updatedProduct.setCategory(product.getCategory());
+			repository.save(updatedProduct);
+			return updatedProduct;
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found");
 		}
-		return updatedGame;
 	}
 
 	@Override
 	public void deleteById(Long id) {
-		var product = repository.findById(id).get();
-		if (product != null) {
-			repository.delete(product);
+		var product = repository.findById(id);
+		if (product.isPresent()) {
+			repository.delete(product.get());
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found");
 		}
 	}
 	
