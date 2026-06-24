@@ -17,7 +17,7 @@ import com.umfrancisco.shoppingcart.model.Product;
 import com.umfrancisco.shoppingcart.service.ProductService;
 
 @RestController
-@RequestMapping("/api/product")
+@RequestMapping("/api")
 @CrossOrigin(origins="http://localhost:3000")
 public class ProductController {
 	
@@ -27,17 +27,17 @@ public class ProductController {
 		this.service = service;
 	}
 	
-	@GetMapping
+	@GetMapping("/public/product")
 	public ResponseEntity<List<Product>> findAll() {
 		return ResponseEntity.status(HttpStatus.OK).body(service.findAll());
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/public/product/{id}")
 	public ResponseEntity<Product> findById(@PathVariable Long id) {
 		return ResponseEntity.status(HttpStatus.OK).body(service.findById(id));
 	}
 	
-	@PostMapping
+	@PostMapping("/admin/product")
 	public ResponseEntity<String> save(@RequestBody Product product) {
 		try {
 			Product savedProduct = service.save(product);
@@ -47,7 +47,7 @@ public class ProductController {
 		}
 	}
 	
-	@PutMapping("/{id}")
+	@PutMapping("/admin/product/{id}")
 	public ResponseEntity<String> update(@RequestBody Product product, @PathVariable Long id) {
 		try {
 			Product updatedProduct = service.update(product, id);
@@ -57,23 +57,23 @@ public class ProductController {
 		}
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/admin/product/{id}")
 	public ResponseEntity<String> delete(@PathVariable Long id) {
 		service.deleteById(id);
 		return ResponseEntity.status(HttpStatus.OK).body("Deleted product with id "+id);
 	}
 	
-	@PostMapping("/data")
+	@PostMapping("/admin/product/data")
 	public ResponseEntity<List<Product>> saveAll(@RequestBody List<Product> products) {
 		return ResponseEntity.status(HttpStatus.OK).body(service.saveAll(products));
 	}
 	
-	@GetMapping("/category/{category}")
+	@GetMapping("/public/product/category/{category}")
 	public ResponseEntity<List<Product>> findByCategory(@PathVariable String category) {
 		return ResponseEntity.status(HttpStatus.OK).body(service.findByCategory(category));
 	}
 	
-	@GetMapping("/banner")
+	@GetMapping("/public/product/banner")
 	public ResponseEntity<Product> getRandomProduct() {
 		var products = service.findAll();
 		for (var p : products) {

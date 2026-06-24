@@ -37,6 +37,11 @@ public class UserController {
 		this.userService = userService;
 	}
 	
+	@GetMapping("/hello")
+	public String hello() {
+		return UserSession.name;
+	}
+	
 	@GetMapping("/logout")
 	public ResponseEntity<String> logout() {
 		UserSession.ID = -1L;
