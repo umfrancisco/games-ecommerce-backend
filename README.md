@@ -73,14 +73,14 @@ This project is a backend service developed using Spring Boot. It exposes REST A
 
 ## Endpoints
 
-| Method | Endpoint                         | Description         |
-| ------ | -------------------------------- | ------------------- |
-| GET    | /api/product                     | Get all products    |
-| GET    | /api/product/{id}                | Get product by ID   |
-| GET    | /api/product/category/{category} | Get product by ID   |
-| POST   | /api/product                     | Create new product  |
-| PUT    | /api/product/{id}                | Update product      |
-| DELETE | /api/product/{id}                | Delete item         |
+| Method | Endpoint                                | Description         |
+| ------ | --------------------------------------- | ------------------- |
+| GET    | /api/public/product                     | Get all products    |
+| GET    | /api/public/product/{id}                | Get product by ID   |
+| GET    | /api/public/product/category/{category} | Get product by ID   |
+| POST   | /api/admin/product                      | Create new product  |
+| PUT    | /api/admin/product/{id}                 | Update product      |
+| DELETE | /api/admin/product/{id}                 | Delete item         |
 
 ## JSON Request Example
 
