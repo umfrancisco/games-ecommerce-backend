@@ -11,7 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.umfrancisco.shoppingcart.config.UserSession;
 import com.umfrancisco.shoppingcart.model.Cart;
 import com.umfrancisco.shoppingcart.model.Product;
-import com.umfrancisco.shoppingcart.model.ItemRequest;
+import com.umfrancisco.shoppingcart.model.ProductRequest;
 import com.umfrancisco.shoppingcart.repository.CartRepository;
 import com.umfrancisco.shoppingcart.repository.RequestRepository;
 
@@ -29,7 +29,7 @@ public class CartServiceImpl implements CartService {
 	}
 	
 	@Override
-	public ItemRequest save(ItemRequest request) {
+	public ProductRequest save(ProductRequest request) {
 		Product product = productService.findById(request.getId());
 		if (product != null && request.getQuantity() <= product.getStock()) {
 			product.setStock(product.getStock() - request.getQuantity());
@@ -42,9 +42,9 @@ public class CartServiceImpl implements CartService {
 	}
 	
 	@Override
-	public Cart saveAll(List<ItemRequest> requests) {
+	public Cart saveAll(List<ProductRequest> requests) {
 		Cart cart = new Cart();
-		List<ItemRequest> savedRequests = new ArrayList<ItemRequest>();
+		List<ProductRequest> savedRequests = new ArrayList<ProductRequest>();
 		for (var request : requests) {
 			var req = save(request);
 			savedRequests.add(req);
@@ -68,8 +68,8 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public ItemRequest findById(Long productId) {
-		Optional<ItemRequest> optionalRequest = requestRepository.findById(productId);
+	public ProductRequest findById(Long productId) {
+		Optional<ProductRequest> optionalRequest = requestRepository.findById(productId);
 		if (optionalRequest.isPresent()) {
 			return optionalRequest.get();
 		} else {
@@ -78,8 +78,8 @@ public class CartServiceImpl implements CartService {
 	}
 	
 	@Override
-	public ItemRequest update(ItemRequest request, Long productId) {
-		Optional<ItemRequest> optionalRequest = requestRepository.findById(productId);
+	public ProductRequest update(ProductRequest request, Long productId) {
+		Optional<ProductRequest> optionalRequest = requestRepository.findById(productId);
 		if (optionalRequest.isPresent()) {
 			var req = optionalRequest.get();
 			req.setId(productId);
@@ -100,7 +100,7 @@ public class CartServiceImpl implements CartService {
 		}
 	}
 	
-	public BigDecimal getTotalPrice(List<ItemRequest> requests) {
+	public BigDecimal getTotalPrice(List<ProductRequest> requests) {
 		BigDecimal total = BigDecimal.ZERO;
 		for (var req : requests) {
 			total = total.add(req.getPrice());

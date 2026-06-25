@@ -7,7 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class ItemRequest {
+public class ProductRequest {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -17,11 +17,11 @@ public class ItemRequest {
 	private BigDecimal price;
 	private Integer quantity;
 	
-	public ItemRequest() {
+	public ProductRequest() {
 		
 	}
 	
-	public ItemRequest(Long requestId, Long id, String name, BigDecimal price, Integer quantity) {
+	public ProductRequest(Long requestId, Long id, String name, BigDecimal price, Integer quantity) {
 		this.requestId = requestId;
 		this.id = id;
 		this.name = name;

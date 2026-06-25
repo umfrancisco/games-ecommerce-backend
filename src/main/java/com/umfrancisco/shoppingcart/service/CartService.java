@@ -2,21 +2,21 @@ package com.umfrancisco.shoppingcart.service;
 
 import java.util.List;
 import com.umfrancisco.shoppingcart.model.Cart;
-import com.umfrancisco.shoppingcart.model.ItemRequest;
+import com.umfrancisco.shoppingcart.model.ProductRequest;
 
 public interface CartService {
 
 	// save
-	ItemRequest save(ItemRequest request);
-	Cart saveAll(List<ItemRequest> requests);
+	ProductRequest save(ProductRequest request);
+	Cart saveAll(List<ProductRequest> requests);
 
 	// find
 	List<Cart> findAll();
 	List<Cart> findByUserCode(Long userCode);
-	ItemRequest findById(Long productId);
+	ProductRequest findById(Long productId);
 	
 	// update
-	ItemRequest update(ItemRequest request, Long productId);
+	ProductRequest update(ProductRequest request, Long productId);
 
 	// delete
 	void deleteById(Long productId);

@@ -17,7 +17,7 @@ public class Cart {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long cartId;
 	@OneToMany
-	private List<ItemRequest> products;
+	private List<ProductRequest> products;
 	@JsonFormat(pattern = "yyyy-MM-dd' 'HH:mm:ss")
 	private LocalDateTime purchaseDateTime;
 	private BigDecimal total;
@@ -27,7 +27,7 @@ public class Cart {
 		
 	}
 	
-	public Cart(Long cartId, List<ItemRequest> products, Long userCode) {
+	public Cart(Long cartId, List<ProductRequest> products, Long userCode) {
 		this.cartId = cartId;
 		this.products = products;
 		this.userCode = userCode;
@@ -39,10 +39,10 @@ public class Cart {
 	public void setCartId(Long cartId) {
 		this.cartId = cartId;
 	}
-	public List<ItemRequest> getProducts() {
+	public List<ProductRequest> getProducts() {
 		return products;
 	}
-	public void setProducts(List<ItemRequest> products) {
+	public void setProducts(List<ProductRequest> products) {
 		this.products = products;
 	}
 	public LocalDateTime getPurchaseDateTime() {
