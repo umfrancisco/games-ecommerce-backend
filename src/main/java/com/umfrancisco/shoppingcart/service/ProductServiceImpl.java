@@ -2,9 +2,9 @@ package com.umfrancisco.shoppingcart.service;
 
 import java.util.List;
 import java.util.Optional;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
+import com.umfrancisco.shoppingcart.exception.APIException;
+import com.umfrancisco.shoppingcart.exception.ResourceNotFoundException;
 import com.umfrancisco.shoppingcart.model.Product;
 import com.umfrancisco.shoppingcart.repository.ProductRepository;
 
@@ -19,6 +19,10 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Product save(Product product) {
+		Product savedProduct = repository.findByName(product.getName());
+		if (savedProduct != null) {
+			throw new APIException("Product "+product.getName()+" already exists");
+		}
 		return repository.save(product);
 	}
 	
@@ -29,7 +33,11 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public List<Product> findAll() {
-		return repository.findAll();
+		List<Product> products = repository.findAll();
+		if (products.isEmpty()) {
+			throw new APIException("No product created yet");
+		}
+		return products;
 	}
 
 	@Override
@@ -38,13 +46,17 @@ public class ProductServiceImpl implements ProductService {
 		if (optionalProduct.isPresent()) {
 			return optionalProduct.get();			
 		} else {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found");
+			throw new ResourceNotFoundException("Product", "id", id);
 		}
 	}
 	
 	@Override
 	public List<Product> findByCategory(String category) {
-		return repository.findByCategory(category.toLowerCase());
+		List<Product> productsByCategory = repository.findByCategory(category.toLowerCase());
+		if (productsByCategory.isEmpty()) {
+			throw new APIException("Product with category "+category+" not found");
+		}
+		return productsByCategory;
 	}
 	
 	@Override
@@ -62,7 +74,7 @@ public class ProductServiceImpl implements ProductService {
 			repository.save(updatedProduct);
 			return updatedProduct;
 		} else {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found");
+			throw new ResourceNotFoundException("Product", "id", id);
 		}
 	}
 
@@ -72,7 +84,7 @@ public class ProductServiceImpl implements ProductService {
 		if (product.isPresent()) {
 			repository.delete(product.get());
 		} else {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found");
+			throw new ResourceNotFoundException("Product", "id", id);
 		}
 	}
 	

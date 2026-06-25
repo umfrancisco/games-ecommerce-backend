@@ -8,4 +8,5 @@ import com.umfrancisco.shoppingcart.model.Product;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 	List<Product> findByCategory(String category);
+	Product findByName(String name);
 }

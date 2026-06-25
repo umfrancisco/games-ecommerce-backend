@@ -38,13 +38,9 @@ public class ProductController {
 	}
 	
 	@PostMapping("/admin/product")
-	public ResponseEntity<String> save(@RequestBody Product product) {
-		try {
-			Product savedProduct = service.save(product);
-			return ResponseEntity.status(HttpStatus.OK).body(savedProduct.toString());
-		} catch (ResponseStatusException e) {
-			return new ResponseEntity<>(e.getReason(), e.getStatusCode());
-		}
+	public ResponseEntity<Product> save(@RequestBody Product product) {
+		Product savedProduct = service.save(product);
+		return ResponseEntity.status(HttpStatus.OK).body(savedProduct);
 	}
 	
 	@PutMapping("/admin/product/{id}")
