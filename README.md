@@ -1,6 +1,6 @@
-# Overview
+# E-Commerce de Jogos Eletrônicos e Hardware
 
-Este projeto é uma API REST de um sistema de e-commerce desenvolvida com foco em boas práticas de arquitetura, organização de código e padrões utilizados no mercado. Ele simula operações reais como cadastro de usuários, autenticação, gerenciamento de produtos e fluxo de compras.
+Este projeto é uma API REST de um sistema de e-commerce de Jogos Eletrônicos e Hardware desenvolvida com foco em boas práticas de arquitetura, organização de código e padrões utilizados no mercado. Ele simula operações reais como cadastro de usuários, autenticação, gerenciamento de produtos e fluxo de compras. Ele utiliza o banco de dados relacional PostgreSQL para armazenar produtos e pedidos.
 
 ## Features
 
