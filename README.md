@@ -1,6 +1,6 @@
 # Overview
 
-This project is a backend service developed using Spring Boot. It exposes REST APIs for handling business logic, database interactions, and authentication.
+Este projeto é uma API REST de um sistema de e-commerce desenvolvida com foco em boas práticas de arquitetura, organização de código e padrões utilizados no mercado. Ele simula operações reais como cadastro de usuários, autenticação, gerenciamento de produtos e fluxo de compras.
 
 ## Features
 
@@ -20,7 +20,7 @@ This project is a backend service developed using Spring Boot. It exposes REST A
 - PostgreSQL
 - Maven
 
-## Project Structure
+## Estrutura do projeto
 <pre>
 
 ├── main
@@ -82,9 +82,9 @@ This project is a backend service developed using Spring Boot. It exposes REST A
 | PUT    | /api/admin/product/{id}                 | Update product      |
 | DELETE | /api/admin/product/{id}                 | Delete item         |
 
-## JSON Request Example
+## Exemplo de requisição JSON
 
-### Game Example
+### Exemplo de Game
 <pre>
 {
     "name": "game",
@@ -98,7 +98,7 @@ This project is a backend service developed using Spring Boot. It exposes REST A
 }
 </pre>
 
-### Hardware example
+### Exemplo de Hardware
 <pre>
 {
     "name": "hardware",
@@ -112,13 +112,13 @@ This project is a backend service developed using Spring Boot. It exposes REST A
 }
 </pre>
 
-## Setup & Installation
+## Instalação
 
-### 1. Clone the repository
+### 1. Clone o repositório
 git clone https://github.com/umfrancisco/shopping-cart-backend  
 cd shopping-cart-backend  
 
-### 2. Configure environment variables
+### 2. Configure as variáveis de ambiente
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/your_db  
 spring.datasource.username=postgres  
@@ -127,19 +127,17 @@ spring.datasource.password=secret
 spring.jpa.hibernate.ddl-auto=update  
 server.port=8080  
 
-### 3. Run the application
+### 3. Rode a aplicação
 
-Using Spring Boot:  
+Usando Spring Boot:  
 
 ./mvnw spring-boot:run  
 
-Build using Maven:  
+Build com Maven:  
 
 mvn clean package  
 java -jar target/shopping-cart-0.0.1-SNAPSHOT.jar  
 
-## Author
-Developed by Francisco Guitler
 
 
 
