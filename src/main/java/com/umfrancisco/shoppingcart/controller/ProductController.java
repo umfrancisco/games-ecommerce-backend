@@ -31,17 +31,22 @@ public class ProductController {
 	}
 	
 	@GetMapping("/public/product/{id}")
-	public ResponseEntity<ProductDTO> findProductById(@PathVariable Long id) {
+	public ResponseEntity<ProductDTO> getProductById(@PathVariable Long id) {
 		return ResponseEntity.status(HttpStatus.OK).body(service.getProductById(id));
 	}
 	
 	@GetMapping("/public/product/category/{category}")
-	public ResponseEntity<List<Product>> findProductByCategory(@PathVariable String category) {
+	public ResponseEntity<List<Product>> getProductByCategory(@PathVariable String category) {
 		return ResponseEntity.status(HttpStatus.OK).body(service.getProductByCategory(category));
 	}
 	
+	@GetMapping("/public/product/highlight")
+	public ResponseEntity<ProductDTO> getHighlightProduct() {
+		return ResponseEntity.status(HttpStatus.OK).body(service.getProductByHighlight());
+	}
+	
 	@PostMapping("/admin/product")
-	public ResponseEntity<ProductDTO> saveProduct(@RequestBody Product product) {
+	public ResponseEntity<ProductDTO> addProduct(@RequestBody Product product) {
 		ProductDTO savedProduct = service.addProduct(product);
 		return ResponseEntity.status(HttpStatus.OK).body(savedProduct);
 	}

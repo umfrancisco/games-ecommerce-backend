@@ -52,6 +52,13 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
+	public ProductDTO getProductByHighlight() {
+		Product highlightProduct = repository.findByHighlight(true)
+				.orElseThrow(() -> new ResourceNotFoundException("Product not found"));
+		return modelMapper.map(highlightProduct, ProductDTO.class);
+	}
+	
+	@Override
 	public ProductDTO updateProduct(Product product, Long id) {
 		Product existingProduct = repository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Product not found"));

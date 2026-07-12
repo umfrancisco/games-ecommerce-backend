@@ -9,6 +9,7 @@ public interface ProductService {
 	List<Product> getProducts();
 	ProductDTO getProductById(Long id);
 	List<Product> getProductByCategory(String category);
+	ProductDTO getProductByHighlight();
 	ProductDTO updateProduct(Product product, Long id);
 	ProductDTO deleteProduct(Long id);
 }
