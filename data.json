@@ -1,0 +1,263 @@
+[
+  {
+    "id": 1,
+    "name": "Batman Arkham Asylum",
+    "price": 90,
+    "stock": 60,
+    "description": "Batman: Arkham Asylum é um jogo eletrônico de Ação-Aventura e Stealth baseado na série de quadrinhos Batman da DC Comics.",
+    "longDescription": "Batman: Arkham Asylum é um jogo eletrônico de Ação-Aventura e Stealth baseado na série de quadrinhos Batman da DC Comics. Foi desenvolvido pela Rocksteady Studios e publicado pela Eidos Interactive em conjunto com a Warner Bros. Interactive Entertainment e a DC Comics para PlayStation 3 e Xbox 360 em 25 de Agosto de 2009 na América do Norte e em 28 de Agosto de 2009 na Europa; a versão para Microsoft Windows foi lançada em 15 de Setembro de 2009 na América do Norte e em 18 de Setembro de 2009 na Europa. Arkham Asylum, escrito pelo veterano escritor do Batman Paul Dini, é baseado no mito de longa duração da banda desenhada, em oposição à maioria dos outros jogos do Batman, que são adaptações do personagem em outras mídias além da fonte de material. O Coringa, arqui-inimigo de Batman, iniciou um plano elaborado a partir do Asilo Arkham, onde muitos dos outros vilões do Batman foram encarcerados. Batman investiga e descobre que o Coringa está tentando criar um exército de criaturas como Bane, e quer ameaçar Gotham City, Batman é forçado a pôr um fim aos planos do Coringa. Os principais personagens do jogo são interpretados pelos atores do DC Animated Universe, ou seja, Kevin Conroy, Mark Hamill e Arleen Sorkin reprisando seus papéis de Batman, Coringa e Harley Quinn, respectivamente. O jogo de ação e aventura é jogado em perspectiva de terceira pessoa com foco principal nas habilidades de combate do Batman, sua invisibilidade e habilidades de detetive, e um arsenal de gadgets que podem ser usados tanto em combate quanto em exploração.",
+    "category": "action",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/batman.png",
+    "platforms": [
+      "Xbox 360",
+      "Playstation 3",
+      "PC"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Grand Theaft Auto IV",
+    "price": 89.9,
+    "stock": 40,
+    "description": "Grand Theft Auto IV é um jogo eletrônico de ação e aventura desenvolvido pela Rockstar North e publicado pela Rockstar Games.",
+    "longDescription": "Grand Theft Auto IV é um jogo eletrônico de ação e aventura desenvolvido pela Rockstar North e publicado pela Rockstar Games. É o sexto título principal da série Grand Theft Auto, após Grand Theft Auto: San Andreas de 2004, e o décimo primeiro título no geral. Foi lançado em 29 de abril de 2008 para PlayStation 3 e Xbox 360 e depois em 2 de dezembro para Microsoft Windows. O jogo se passa na cidade ficcional de Liberty City, com a história para um jogador seguindo o imigrante Niko Bellic e suas tentativas de escapar de seu passado enquanto está sob pressão de agiotas, criminosos de alto perfil e agências governamentais. O mundo aberto permite que os jogadores explorem livremente Liberty City, composta por três ilhas principais, e o estado vizinho de Alderney. A jogabilidade é mostrada em uma perspectiva de terceira pessoa e o mundo do jogo pode ser atravessado a pé ou com veículos. Os jogadores controlam Niko Bellic no modo um jogador, com muitas missões envolvendo tiro e direção. O modo multijogador online permite que grupos de jogadores entrem em partidas competitivas ou cooperativas. Dois pacotes de expansão foram posteriormente lançados, The Lost and Damned e The Ballad of Gay Tony, ambos contendo novos recursos, enredos e protagonistas que se interconectam com a história principal de Grand Theft Auto IV.",
+    "category": "action",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/gta-iv.png",
+    "platforms": [
+      "Xbox 360",
+      "Playstation 3",
+      "PC"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Red Dead Redemption",
+    "price": 99.9,
+    "stock": 80,
+    "description": "Red Dead Redemption é um jogo eletrônico de ação e aventura de 2010, desenvolvido pela Rockstar San Diego e publicado pela Rockstar Games.",
+    "longDescription": "Red Dead Redemption é um jogo eletrônico de ação e aventura de 2010, desenvolvido pela Rockstar San Diego e publicado pela Rockstar Games. Um sucessor espiritual de Red Dead Revolver (2004), é o segundo título da série Red Dead. Red Dead Redemption se passa durante o declínio do Velho Oeste no ano de 1911. A história acompanha John Marston, um ex-fora da lei que, após sua esposa e filho serem feitos reféns pelo governo em troca de resgate por seus serviços como pistoleiro, parte em busca de justiça para levar três membros de sua antiga gangue à justiça. A narrativa explora temas como o ciclo da violência, masculinidade, redenção e o Sonho Americano. A jogabilidade é apresentada através de uma perspectiva em terceira pessoa, permitindo que o jogador explore livremente o mundo aberto interativo, uma versão ficcional do oeste dos Estados Unidos e do norte do México, principalmente a cavalo e a pé. Os tiroteios enfatizam uma mecânica de jogo de pistoleiro chamada \"Olhos da Morte\", que permite aos jogadores marcar vários alvos nos inimigos em câmera lenta. O jogo utiliza um sistema de moralidade no qual as ações do jogador afetam os níveis de honra e fama de seu personagem, bem como a forma como outros personagens reagem a ele. Um modo multijogador online está incluído no lançamento original, permitindo que até 16 jogadores participem de partidas cooperativas e competitivas em uma recriação do cenário do modo para um jogador.",
+    "category": "adventure",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/red-dead-redemption.png",
+    "platforms": [
+      "Xbox 360",
+      "Playstation 3",
+      "PC"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "The Elder Scrolls V: Skyrim",
+    "price": 87.9,
+    "stock": 90,
+    "description": "The Elder Scrolls V: Skyrim é um jogo eletrônico de RPG de ação desenvolvido pela Bethesda Game Studios e publicado pela Bethesda Softworks.",
+    "longDescription": "The Elder Scrolls V: Skyrim é um jogo eletrônico de RPG de ação desenvolvido pela Bethesda Game Studios e publicado pela Bethesda Softworks. É o quinto jogo principal da série The Elder Scrolls, seguindo The Elder Scrolls IV: Oblivion. Foi lançado em 11 de novembro de 2011 para Microsoft Windows, PlayStation 3 e Xbox 360. É o primeiro jogo ocidental da história a receber 40/40 (nota máxima) na conceituada Famitsu. O jogo conseguiu três prêmios no VGA 2011, incluindo Jogo do Ano. Os acontecimentos do jogo passam-se duzentos anos depois da, já quase esquecida, crise de Oblivion, no ano 201 da quarta era (4E 201) na província de Skyrim, no norte de Tamriel, e 30 anos após a mais recente Grande Guerra, onde o Aldmeri Dominion e o Império lutaram arduamente, mas que quase extinguiu os humanos de Tamriel, e para evitar tal derrota, acordaram com a Aldmeri Dominion, rendendo duas forças e sujeitando-se as suas exigências.",
+    "category": "fantasy",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/skyrim.png",
+    "platforms": [
+      "Xbox 360",
+      "Playstation 3",
+      "PC"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Sleeping Dogs",
+    "price": 70,
+    "stock": 60,
+    "description": "Sleeping Dogs é um jogo eletrônico de ação e aventura em mundo aberto com elementos policiais.",
+    "longDescription": "Sleeping Dogs é um jogo eletrônico de ação e aventura em mundo aberto com elementos policiais. Foi desenvolvido pela United Front Games e distribuído pela Square Enix para PlayStation 3, Xbox 360 e Windows. A história do jogo é ambientada em Hong Kong e foca-se em missões e operações de infiltração da polícia local dentro das Tríades (a Máfia Chinesa). O jogo foi anunciado primeiramente em 2009 com o título True Crime: Hong Kong e era para ser o terceiro capítulo na série do jogo True Crime. O projeto ia ser distribuído pela Activision. Foi resultado de um orçamento de produção elevado, mas teve inúmeros atrasos. Por causa do fechamento da produtora Luxoflux, que produziu o jogo, ele acabou sendo cancelado pela própria Activision em 2011. Seis meses depois, foi anunciado que a Square Enix adquiriu a propriedade intelectual do jogo. Tiveram que mudar o nome do jogo para Sleeping Dogs em 2012, porque a Square Enix não conseguiu ficar com os direitos do nome True Crime.",
+    "category": "action",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/sleeping-dogs.png",
+    "platforms": [
+      "Xbox 360",
+      "Playstation 3",
+      "PC"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Assassin's Creed II",
+    "price": 89.9,
+    "stock": 80,
+    "description": "Assassin's Creed II é um jogo eletrônico de ação e aventura de 2009 desenvolvido pela Ubisoft Montreal e publicado pela Ubisoft.",
+    "longDescription": "Assassin's Creed II é um jogo eletrônico de ação e aventura de 2009 desenvolvido pela Ubisoft Montreal e publicado pela Ubisoft. É o segundo título principal da série Assassin's Creed e a sequência de Assassin's Creed (2007). O jogo foi lançado inicialmente para PlayStation 3 e Xbox 360 em novembro de 2009, sendo posteriormente disponibilizado para Microsoft Windows em março de 2010 e OS X em outubro de 2010. A trama do jogo se passa em uma história ficcional baseada em eventos reais e acompanha a luta milenar entre a Ordem dos Assassinos, que busca preservar a paz e o livre-arbítrio, e a Ordem dos Templários, que almeja a paz por meio do controle. A narrativa do presente se passa no século XXI e acompanha Desmond Miles, que revive as memórias genéticas de seu ancestral, Ezio Auditore da Firenze, para desvendar os mistérios deixados por uma antiga civilização conhecida como Primeira Civilização, na esperança de pôr fim ao conflito entre Assassinos e Templários. A narrativa principal ocorre durante o auge do Renascimento na Itália, entre 1476 e 1499, acompanhando a jornada de Ezio como um Assassino enquanto busca vingança contra os responsáveis pela morte de seu pai e irmãos. A jogabilidade concentra-se no uso das habilidades de combate, furtividade e parkour de Ezio para derrotar inimigos e explorar o ambiente. O jogo apresenta um amplo mundo aberto composto por diversas cidades italianas, incluindo Florença, Veneza, Monteriggioni, San Gimignano e Forlì, todas recriadas com fidelidade para refletir o contexto histórico.",
+    "category": "adventure",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/assassins-creed-2.png",
+    "platforms": [
+      "Xbox 360",
+      "Playstation 3",
+      "PC"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Call of Duty: Modern Warfare 3",
+    "price": 79.9,
+    "stock": 40,
+    "description": "Call of Duty: Modern Warfare 3 é um jogo eletrônico de tiro em primeira pessoa.",
+    "longDescription": "Call of Duty: Modern Warfare 3 é um jogo eletrônico de tiro em primeira pessoa desenvolvido pela Infinity Ward e pela Sledgehammer Games com a assistência da Raven Software e publicado pela Activision. É o oitavo título da série Call of Duty e o terceiro da saga Modern Warfare sendo uma sequela direta de Call of Duty: Modern Warfare 2. A Sledgehammer Games, um dos estúdios da Activision, apontou para um jogo \"livre de erros\" (\"bug free\" em inglês) pela primeira vez na série, estabelecendo assim uma meta para as pontuações de crítica do site Metacritic acima de 95%. É também o primeiro jogo da série a ter suporte para jogadores daltônicos.",
+    "category": "fps",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/cod-modern-warfare-3.jpg",
+    "platforms": [
+      "Xbox 360",
+      "Playstation 3",
+      "PC"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Dead Rising",
+    "price": 90.5,
+    "stock": 40,
+    "description": "Dead Rising é um jogo eletrônico de Survival horror com elementos de ação e aventura e RPG desenvolvido pela Capcom e produzido por Keiji Inafune.",
+    "longDescription": "Dead Rising é um jogo eletrônico de Survival horror com elementos de ação e aventura e RPG desenvolvido pela Capcom e produzido por Keiji Inafune. Originalmente o jogo foi desenvolvido como um título exclusivo para o Xbox 360, em julho de 2008, foi anunciado que o jogo estaria sendo portado para o Wii, sob o título de Dead Rising: Chop Till You Drop. A versão do jogo para o Xbox 360 foi lançada em 8 de agosto de 2006 na América do Norte e em 28 de setembro de 2006 no Japão. O jogo se tornou um sucesso, recebendo análises favoráveis e altos números de vendas. O jogo foi relançado sob a linha \"Platinum Hits\", e uma versão do jogo para celulares foi realizada. Como parte do aniversário de 10 anos de Dead Rising, portes do jogo para Microsoft Windows, PlayStation 4 e Xbox One foram anunciados em julho de 2016 para serem lançado em setembro de 2016.",
+    "category": "action",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/dead-rising.jpg",
+    "platforms": [
+      "Xbox 360",
+      "PC"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Assassin's Creed III",
+    "price": 102.89,
+    "stock": 50,
+    "description": "Assassin's Creed III é um jogo eletrônico de ação-aventura de 2012 produzido pela Ubisoft Montreal e publicado pela Ubisoft.",
+    "longDescription": "A trama do jogo se passa em uma história fictícia baseada em eventos do mundo real e acompanha a luta milenar entre os Assassinos, que lutam para preservar a paz e o livre arbítrio, e os Templários, que desejam a paz através do controle. A história principal se passa no século XXI e apresenta o protagonista da série, Desmond Miles, usando uma máquina conhecida como Animus para reviver as memórias de seus ancestrais e encontrar uma maneira de evitar o apocalipse de 2012. A narrativa principal se passa na América Colonial do século XVIII, entre 1754 e 1783, e acompanha dois personagens cujas histórias estão interligadas: Haytham Kenway, um Templário britânico que tenta estabelecer uma presença para sua Ordem nas colônias durante a Guerra Franco-Indígena; e Ratonhnhaké:ton/Connor, filho meio-Mohawk de Haytham, que se torna um Assassino para proteger seu povo e vingar a morte de sua mãe, e luta contra as tentativas dos Templários de influenciar o resultado da Revolução Americana.",
+    "category": "adventure",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/assassins-creed-3.png",
+    "platforms": [
+      "Xbox 360",
+      "Playstation 3",
+      "PC"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "God of War II",
+    "price": 85.49,
+    "stock": 30,
+    "description": "God of War II é um jogo eletrônico de ação-aventura e hack and slash desenvolvido pela Santa Monica Studio e publicado pela Sony Computer Entertainment (SCE).",
+    "longDescription": "God of War II é um jogo eletrônico de ação-aventura e hack and slash desenvolvido pela Santa Monica Studio e publicado pela Sony Computer Entertainment (SCE). Lançado pela primeira vez em 13 de março de 2007 para PlayStation 2, é o segundo jogo da franquia God of War e o sétimo em ordem cronológica, sendo a continuação de God of War (2005). O jogo é vagamente baseado na mitologia grega e ambientado na Grécia Antiga, com a vingança sendo o tema central. O personagem do jogador é o protagonista Kratos, o novo deus da guerra que tomou o lugar de Ares depois de ter o matado. Kratos é traído por Zeus, o rei dos deuses do Olimpo, que tira dele sua divindade e o mata. Lentamente arrastado para o submundo, ele é salvo pela titã Gaia, que o instrui a encontrar as Irmãs do Destino, pois elas possuem o poder para fazer Kratos voltar no tempo, impedir a traição de Zeus e consequentemente sua morte.",
+    "category": "fantasy",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/god-of-war-2.png",
+    "platforms": [
+      "Playstation 2"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Diablo III",
+    "price": 79.99,
+    "stock": 50,
+    "description": "Diablo III é um RPG de ação e hack and slash desenvolvido pela Blizzard Entertainment, é o terceiro título da série Diablo.",
+    "longDescription": "Diablo III segue a história de seu predecessor, Diablo II: Lord of Destruction, que superou expectativas. A história do novo jogo passa-se depois de vinte anos dos acontecimentos que marcaram o fim de Diablo II. Os guerreiros finalmente derrotaram o mal, mas quando um cometa cai na Terra exatamente no lugar onde Diablo foi confinado, os guerreiros são novamente convocados para defender a humanidade contra o novo inimigo. O estilo do jogo continua o mesmo (visão isométrica), mas desta vez utilizando os recursos das novas tecnologias reproduzindo um mundo totalmente em 3D e interativo, podendo até destruir cenários. Os jogadores poderão escolher entre cinco classes disponíveis (sete após expansões) e se aventurar num mundo mágico e ameaçador que Diablo III proporciona, porém desta vez, com novas habilidades e equipamentos e com um nível de personalização de personagem mais apurado.",
+    "category": "fantasy",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/shopping-cart-backend/refs/heads/main/images/diablo-3.jpg",
+    "platforms": [
+      "Xbox 360",
+      "Playstation 3",
+      "PC"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Lenovo Ideapad",
+    "price": 4229.1,
+    "stock": 20,
+    "description": "Notebook Lenovo Ideapad Slim 3 15q8x10 Snapdragon X X1-26-100 16gb 512gb SSD WINDOWS 11 Arm 15.3 - 83tw0000bo Luna Grey",
+    "longDescription": null,
+    "category": "notebook",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/lenovo-ideapad.png",
+    "platforms": null
+  },
+  {
+    "id": 13,
+    "name": "Asus Vivobook",
+    "price": 3699.99,
+    "stock": 15,
+    "description": "Notebook ASUS Vivobook 15 M1502, AMD Ryzen 7 5825U, 16GB RAM, 512 GB SSD, KeepOS, Tela 15.6, FHD, Cool Silver - M1502YA-NJ612",
+    "longDescription": null,
+    "category": "notebook",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/asus-vivobook.png",
+    "platforms": null
+  },
+  {
+    "id": 14,
+    "name": "MacBook Air",
+    "price": 8249,
+    "stock": 20,
+    "description": "MacBook Air Apple 13.6, Chip M2, CPU 8 Núcleos, GPU 10 Núcleos, 24GB, SSD 512GB, Meia-Noite - Z1HN0BZ/A",
+    "longDescription": null,
+    "category": "notebook",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/macbook-air.png",
+    "platforms": null
+  },
+  {
+    "id": 15,
+    "name": "Acer Aspire",
+    "price": 3749.99,
+    "stock": 15,
+    "description": "Notebook Acer Aspire 5 A515-45-R478, AMD Ryzen 5-5500U, 16GB RAM, 512GB SSD, 15.6 FHD LED, IPS, 60Hz, Linux Gutta - NX.AYDAL.00R",
+    "longDescription": null,
+    "category": "notebook",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/acer-aspire.png",
+    "platforms": null
+  },
+  {
+    "id": 16,
+    "name": "Predator Helios Neo",
+    "price": 12149.1,
+    "stock": 20,
+    "description": "Notebook Gamer Predator Helios Neo 16 Ai Phn16-73-96sw Intel® Core™ Ultra 9 275hx 32gb Ram 1TB SSD RTX 5070 16",
+    "longDescription": null,
+    "category": "notebook",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/predator-helios-neo.png",
+    "platforms": null
+  },
+  {
+    "id": 17,
+    "name": "Asus Tuf Gaming",
+    "price": 7649,
+    "stock": 15,
+    "description": "Notebook Asus Tuf Gaming F16, Intel Core i5 14a Geração, Nvidia RTX™ 5060, 8GB, 512gb SSD, Keepos, 16 LED Fhd+ Nível Ips, Jaeger Gray",
+    "longDescription": null,
+    "category": "notebook",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/asus-tuf.png",
+    "platforms": null
+  },
+  {
+    "id": 18,
+    "name": "Kit Teclado e Mouse AOC",
+    "price": 50.9,
+    "stock": 10,
+    "description": "Kit Teclado e Mouse AOC Wireless Set, 2.4G, Preto - KM310 BK",
+    "longDescription": null,
+    "category": "peripheral",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/kit-mouse-teclado.png",
+    "platforms": null
+  },
+  {
+    "id": 19,
+    "name": "Headset Gamer XPG",
+    "price": 149.99,
+    "stock": 15,
+    "description": "Headset Gamer XPG Precog 7.1 com Driver Duplo para PC, MAC, Notebook, Playstation, XBOX e Nintendo Switch",
+    "longDescription": null,
+    "category": "peripheral",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/headset-gamer.png",
+    "platforms": null
+  },
+  {
+    "id": 20,
+    "name": "Mouse Gamer",
+    "price": 189.99,
+    "stock": 10,
+    "description": "Mouse Gamer Cooler Master MM712, RGB, 26000DPI, 6 Botões, USB, Preto Fosco - MM-712-KKOH1",
+    "longDescription": null,
+    "category": "peripheral",
+    "imageUrl": "https://raw.githubusercontent.com/umfrancisco/Shopping_Cart_Backend/refs/heads/main/images/hardware/mouse-gamer.png",
+    "platforms": null
+  }
+]
