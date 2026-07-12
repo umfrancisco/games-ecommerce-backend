@@ -25,7 +25,7 @@ public class ProductServiceTest {
 	    Product prod1 = new Product();
 	    Product prod2 = new Product();
 	    BDDMockito.given(repository.findAll()).willReturn(List.of(prod1, prod2));
-	    List<Product> productList = service.findAll();
+	    List<Product> productList = service.getProducts();
 	    Assertions.assertNotNull(productList);
 	    Assertions.assertEquals(2, productList.size());
 	}

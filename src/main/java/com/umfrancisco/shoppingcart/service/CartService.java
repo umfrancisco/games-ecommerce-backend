@@ -2,7 +2,7 @@ package com.umfrancisco.shoppingcart.service;
 
 import java.util.List;
 import com.umfrancisco.shoppingcart.model.Cart;
-import com.umfrancisco.shoppingcart.model.ProductRequest;
+import com.umfrancisco.shoppingcart.payload.ProductRequest;
 
 public interface CartService {
 

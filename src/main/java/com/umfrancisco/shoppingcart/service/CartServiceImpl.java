@@ -11,7 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.umfrancisco.shoppingcart.config.UserSession;
 import com.umfrancisco.shoppingcart.model.Cart;
 import com.umfrancisco.shoppingcart.model.Product;
-import com.umfrancisco.shoppingcart.model.ProductRequest;
+import com.umfrancisco.shoppingcart.payload.ProductRequest;
 import com.umfrancisco.shoppingcart.repository.CartRepository;
 import com.umfrancisco.shoppingcart.repository.RequestRepository;
 
@@ -30,10 +30,10 @@ public class CartServiceImpl implements CartService {
 	
 	@Override
 	public ProductRequest save(ProductRequest request) {
-		Product product = productService.findById(request.getId());
+		Product product = productService.getProductById(request.getId());
 		if (product != null && request.getQuantity() <= product.getStock()) {
 			product.setStock(product.getStock() - request.getQuantity());
-			productService.update(product, product.getId());
+			productService.updateProduct(product, product.getId());
 			BigDecimal quantity = BigDecimal.valueOf(request.getQuantity());
 			request.setPrice(product.getPrice().multiply(quantity));
 			return requestRepository.save(request);

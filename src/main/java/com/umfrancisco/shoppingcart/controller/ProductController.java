@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 import com.umfrancisco.shoppingcart.model.Product;
 import com.umfrancisco.shoppingcart.service.ProductService;
 
@@ -26,56 +25,36 @@ public class ProductController {
 	}
 	
 	@GetMapping("/public/product")
-	public ResponseEntity<List<Product>> findAll() {
-		return ResponseEntity.status(HttpStatus.OK).body(service.findAll());
+	public ResponseEntity<List<Product>> getProducts() {
+		return ResponseEntity.status(HttpStatus.OK).body(service.getProducts());
 	}
 	
 	@GetMapping("/public/product/{id}")
-	public ResponseEntity<Product> findById(@PathVariable Long id) {
-		return ResponseEntity.status(HttpStatus.OK).body(service.findById(id));
+	public ResponseEntity<Product> findProductById(@PathVariable Long id) {
+		return ResponseEntity.status(HttpStatus.OK).body(service.getProductById(id));
+	}
+	
+	@GetMapping("/public/product/category/{category}")
+	public ResponseEntity<List<Product>> findProductByCategory(@PathVariable String category) {
+		return ResponseEntity.status(HttpStatus.OK).body(service.getProductByCategory(category));
 	}
 	
 	@PostMapping("/admin/product")
-	public ResponseEntity<Product> save(@RequestBody Product product) {
-		Product savedProduct = service.save(product);
+	public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
+		Product savedProduct = service.addProduct(product);
 		return ResponseEntity.status(HttpStatus.OK).body(savedProduct);
 	}
 	
 	@PutMapping("/admin/product/{id}")
-	public ResponseEntity<String> update(@RequestBody Product product, @PathVariable Long id) {
-		try {
-			Product updatedProduct = service.update(product, id);
-			return ResponseEntity.status(HttpStatus.OK).body(updatedProduct.toString());			
-		} catch (ResponseStatusException e) {
-			return new ResponseEntity<>(e.getReason(), e.getStatusCode());
-		}
+	public ResponseEntity<Product> updateProduct(@RequestBody Product product, @PathVariable Long id) {
+		Product updatedProduct = service.updateProduct(product, id);
+		return ResponseEntity.status(HttpStatus.OK).body(updatedProduct);	
 	}
 	
 	@DeleteMapping("/admin/product/{id}")
-	public ResponseEntity<String> delete(@PathVariable Long id) {
-		service.deleteById(id);
-		return ResponseEntity.status(HttpStatus.OK).body("Deleted product with id "+id);
-	}
-	
-	@PostMapping("/admin/product/data")
-	public ResponseEntity<List<Product>> saveAll(@RequestBody List<Product> products) {
-		return ResponseEntity.status(HttpStatus.OK).body(service.saveAll(products));
-	}
-	
-	@GetMapping("/public/product/category/{category}")
-	public ResponseEntity<List<Product>> findByCategory(@PathVariable String category) {
-		return ResponseEntity.status(HttpStatus.OK).body(service.findByCategory(category));
-	}
-	
-	@GetMapping("/public/product/banner")
-	public ResponseEntity<Product> getRandomProduct() {
-		var products = service.findAll();
-		for (var p : products) {
-			if (p.getStock() > 0) {
-				return ResponseEntity.status(HttpStatus.OK).body(p);
-			}
-		}
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+	public ResponseEntity<Product> deleteProduct(@PathVariable Long id) {
+		Product existingProduct = service.deleteProduct(id);
+		return ResponseEntity.status(HttpStatus.OK).body(existingProduct);
 	}
 	
 }

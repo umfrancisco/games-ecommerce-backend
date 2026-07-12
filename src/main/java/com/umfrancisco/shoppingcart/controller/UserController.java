@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.umfrancisco.shoppingcart.config.JwtProvider;
 import com.umfrancisco.shoppingcart.config.UserSession;
-import com.umfrancisco.shoppingcart.model.AuthResponse;
 import com.umfrancisco.shoppingcart.model.User;
-import com.umfrancisco.shoppingcart.model.UserRequest;
+import com.umfrancisco.shoppingcart.payload.AuthResponse;
+import com.umfrancisco.shoppingcart.payload.UserRequest;
 import com.umfrancisco.shoppingcart.repository.UserRepository;
 import com.umfrancisco.shoppingcart.service.UserServiceImpl;
 

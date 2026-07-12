@@ -1,4 +1,4 @@
-package com.umfrancisco.shoppingcart.model;
+package com.umfrancisco.shoppingcart.payload;
 
 public class AuthResponse {
 	

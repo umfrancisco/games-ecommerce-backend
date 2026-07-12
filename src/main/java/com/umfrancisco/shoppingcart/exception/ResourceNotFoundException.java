@@ -1,28 +1,16 @@
 package com.umfrancisco.shoppingcart.exception;
 
+import java.time.LocalDateTime;
+
 public class ResourceNotFoundException extends RuntimeException {
 	
 	private static final long serialVersionUID = 746340621182983307L;
-	String resourceName;
-	String field;
-	String fieldName;
-	Long fieldId;
 	
 	public ResourceNotFoundException() {
 		
 	}
 	
-	public ResourceNotFoundException(String resourceName, String field, String fieldName) {
-		super(String.format("%s not found with %s: %s", resourceName, field, fieldName));
-		this.resourceName = resourceName;
-		this.field = field;
-		this.fieldName = fieldName;
-	}
-	
-	public ResourceNotFoundException(String resourceName, String field, Long fieldId) {
-		super(String.format("%s not found with %s: %d", resourceName, field, fieldId));
-		this.resourceName = resourceName;
-		this.field = field;
-		this.fieldId = fieldId;
+	public ResourceNotFoundException(String message) {
+		super(String.format("[%s] Error: %s", LocalDateTime.now(), message));
 	}
 }
