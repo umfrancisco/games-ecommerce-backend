@@ -1,5 +1,6 @@
 package com.umfrancisco.shoppingcart.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -52,7 +53,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public ProductDTO getProductByHighlight() {
+	public ProductDTO getHighlightedProduct() {
 		List<Product> highlightedProducts = repository.findByHighlight(true);
 		for (var highlightProduct : highlightedProducts) {
 			if (highlightProduct.getStock() > 0) {
@@ -60,6 +61,16 @@ public class ProductServiceImpl implements ProductService {
 			}
 		}
 		throw new ResourceNotFoundException("Not available product found");
+	}
+	
+	@Override
+	public List<ProductDTO> getHighlightedProducts() {
+		List<Product> highlightedProducts = repository.findByHighlight(true);
+		List<ProductDTO> productDTOS = new ArrayList<ProductDTO>();
+		for (var prod : highlightedProducts) {
+			productDTOS.add(modelMapper.map(prod, ProductDTO.class));
+		}
+		return productDTOS;
 	}
 	
 	@Override

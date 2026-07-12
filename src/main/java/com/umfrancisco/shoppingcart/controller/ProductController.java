@@ -42,9 +42,14 @@ public class ProductController {
 		return ResponseEntity.status(HttpStatus.OK).body(service.getProductByCategory(category));
 	}
 	
-	@GetMapping("/public/product/highlight")
+	@GetMapping("/public/product/highlight/first")
 	public ResponseEntity<ProductDTO> getHighlightProduct() {
-		return ResponseEntity.status(HttpStatus.OK).body(service.getProductByHighlight());
+		return ResponseEntity.status(HttpStatus.OK).body(service.getHighlightedProduct());
+	}
+	
+	@GetMapping("/public/product/highlight/all")
+	public ResponseEntity<List<ProductDTO>> getHighlightProducts() {
+		return ResponseEntity.status(HttpStatus.OK).body(service.getHighlightedProducts());
 	}
 	
 	@PostMapping("/admin/product")
