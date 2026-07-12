@@ -1,35 +1,26 @@
-package com.umfrancisco.shoppingcart.model;
+package com.umfrancisco.shoppingcart.payload;
 
 import java.math.BigDecimal;
 import java.util.List;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
-@Entity
-public class Product {
+public class ProductDTO {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private BigDecimal price;
 	private Integer stock;
 	private String description;
-	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	private String category;
 	private String imageUrl;
 	private List<String> platforms;
 	private Boolean highlight;
 	
-	public Product() {
+	public ProductDTO() {
 		
 	}
 	
-	public Product(Long id, String name, BigDecimal price, Integer stock, String description, String longDescription,
+	public ProductDTO(Long id, String name, BigDecimal price, Integer stock, String description, String longDescription,
 			String category, String imageUrl, List<String> platforms, Boolean highlight) {
 		this.id = id;
 		this.name = name;
@@ -106,7 +97,7 @@ public class Product {
 	
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", stock=" + stock + ", description="
+		return "ProductDTO [id=" + id + ", name=" + name + ", price=" + price + ", stock=" + stock + ", description="
 				+ description + ", longDescription=" + longDescription + ", category=" + category + ", imageUrl="
 				+ imageUrl + ", platforms=" + platforms + ", highlight=" + highlight + "]";
 	}

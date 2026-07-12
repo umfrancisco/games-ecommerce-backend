@@ -5,12 +5,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import com.umfrancisco.shoppingcart.config.UserSession;
 import com.umfrancisco.shoppingcart.model.Cart;
 import com.umfrancisco.shoppingcart.model.Product;
+import com.umfrancisco.shoppingcart.payload.ProductDTO;
 import com.umfrancisco.shoppingcart.payload.ProductRequest;
 import com.umfrancisco.shoppingcart.repository.CartRepository;
 import com.umfrancisco.shoppingcart.repository.RequestRepository;
@@ -21,16 +23,19 @@ public class CartServiceImpl implements CartService {
 	private final CartRepository cartRepository;
 	private final RequestRepository requestRepository;
 	private final ProductService productService;
+	private ModelMapper modelMapper;
 	
-	public CartServiceImpl(CartRepository cartRepository, RequestRepository requestRepository, ProductService productService) {
+	public CartServiceImpl(CartRepository cartRepository, RequestRepository requestRepository, ProductService productService, ModelMapper modelMapper) {
 		this.cartRepository = cartRepository;
 		this.requestRepository = requestRepository;
 		this.productService = productService;
+		this.modelMapper = modelMapper;
 	}
 	
 	@Override
 	public ProductRequest save(ProductRequest request) {
-		Product product = productService.getProductById(request.getId());
+		ProductDTO productDTO = productService.getProductById(request.getId());
+		Product product = modelMapper.map(productDTO, Product.class);
 		if (product != null && request.getQuantity() <= product.getStock()) {
 			product.setStock(product.getStock() - request.getQuantity());
 			productService.updateProduct(product, product.getId());

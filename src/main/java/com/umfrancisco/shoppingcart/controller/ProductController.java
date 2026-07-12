@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.umfrancisco.shoppingcart.model.Product;
+import com.umfrancisco.shoppingcart.payload.ProductDTO;
 import com.umfrancisco.shoppingcart.service.ProductService;
 
 @RestController
@@ -30,7 +31,7 @@ public class ProductController {
 	}
 	
 	@GetMapping("/public/product/{id}")
-	public ResponseEntity<Product> findProductById(@PathVariable Long id) {
+	public ResponseEntity<ProductDTO> findProductById(@PathVariable Long id) {
 		return ResponseEntity.status(HttpStatus.OK).body(service.getProductById(id));
 	}
 	
@@ -40,20 +41,20 @@ public class ProductController {
 	}
 	
 	@PostMapping("/admin/product")
-	public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
-		Product savedProduct = service.addProduct(product);
+	public ResponseEntity<ProductDTO> saveProduct(@RequestBody Product product) {
+		ProductDTO savedProduct = service.addProduct(product);
 		return ResponseEntity.status(HttpStatus.OK).body(savedProduct);
 	}
 	
 	@PutMapping("/admin/product/{id}")
-	public ResponseEntity<Product> updateProduct(@RequestBody Product product, @PathVariable Long id) {
-		Product updatedProduct = service.updateProduct(product, id);
+	public ResponseEntity<ProductDTO> updateProduct(@RequestBody Product product, @PathVariable Long id) {
+		ProductDTO updatedProduct = service.updateProduct(product, id);
 		return ResponseEntity.status(HttpStatus.OK).body(updatedProduct);	
 	}
 	
 	@DeleteMapping("/admin/product/{id}")
-	public ResponseEntity<Product> deleteProduct(@PathVariable Long id) {
-		Product existingProduct = service.deleteProduct(id);
+	public ResponseEntity<ProductDTO> deleteProduct(@PathVariable Long id) {
+		ProductDTO existingProduct = service.deleteProduct(id);
 		return ResponseEntity.status(HttpStatus.OK).body(existingProduct);
 	}
 	

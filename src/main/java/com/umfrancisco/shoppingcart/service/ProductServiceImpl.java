@@ -1,26 +1,29 @@
 package com.umfrancisco.shoppingcart.service;
 
 import java.util.List;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import com.umfrancisco.shoppingcart.exception.APIException;
 import com.umfrancisco.shoppingcart.exception.ResourceNotFoundException;
 import com.umfrancisco.shoppingcart.model.Product;
+import com.umfrancisco.shoppingcart.payload.ProductDTO;
 import com.umfrancisco.shoppingcart.repository.ProductRepository;
 
 @Service
 public class ProductServiceImpl implements ProductService {
 	
 	private final ProductRepository repository;
+	private ModelMapper modelMapper;
 	
-	public ProductServiceImpl(ProductRepository repository) {
+	public ProductServiceImpl(ProductRepository repository, ModelMapper modelMapper) {
 		this.repository = repository;
+		this.modelMapper = modelMapper;
 	}
 
 	@Override
-	public Product addProduct(Product product) {
-		repository.findByName(product.getName())
-				.orElseThrow(() -> new APIException("This product already exists"));
-		return repository.save(product);
+	public ProductDTO addProduct(Product product) {
+		Product savedProduct = repository.save(product);
+		return modelMapper.map(savedProduct, ProductDTO.class);
 	}
 	
 	@Override
@@ -33,10 +36,10 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public Product getProductById(Long id) {
+	public ProductDTO getProductById(Long id) {
 		Product product = repository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Product not found"));
-		return product;
+		return modelMapper.map(product, ProductDTO.class);
 	}
 	
 	@Override
@@ -49,7 +52,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public Product updateProduct(Product product, Long id) {
+	public ProductDTO updateProduct(Product product, Long id) {
 		Product existingProduct = repository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Product not found"));
 		existingProduct.setName(product.getName());
@@ -59,16 +62,17 @@ public class ProductServiceImpl implements ProductService {
 		existingProduct.setLongDescription(product.getLongDescription());
 		existingProduct.setImageUrl(product.getImageUrl());
 		existingProduct.setCategory(product.getCategory());
-		repository.save(existingProduct);
-		return existingProduct;
+		existingProduct.setHighlight(product.getHighlight());
+		Product updatedProduct = repository.save(existingProduct);
+		return modelMapper.map(updatedProduct, ProductDTO.class);
 	}
 
 	@Override
-	public Product deleteProduct(Long id) {
+	public ProductDTO deleteProduct(Long id) {
 		Product existingProduct = repository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Product not found"));
 		repository.delete(existingProduct);
-		return existingProduct;
+		return modelMapper.map(existingProduct, ProductDTO.class);
 	}
 	
 }

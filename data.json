@@ -1,3 +1,15 @@
+{
+	"name": "hello world",
+	"price": 10.00,
+	"stock": 10,
+	"description": "this is a hello world",
+	"longDescription": "this is a long hello world",
+	"category": "programming",
+	"imageUrl": "hello.png",
+	"platforms": [],
+	"highlight": false
+}
+
 [
   {
     "id": 1,
@@ -12,7 +24,8 @@
       "Xbox 360",
       "Playstation 3",
       "PC"
-    ]
+    ],
+	"highlight": true
   },
   {
     "id": 2,
