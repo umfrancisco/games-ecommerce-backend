@@ -53,9 +53,13 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public ProductDTO getProductByHighlight() {
-		Product highlightProduct = repository.findByHighlight(true)
-				.orElseThrow(() -> new ResourceNotFoundException("Product not found"));
-		return modelMapper.map(highlightProduct, ProductDTO.class);
+		List<Product> highlightedProducts = repository.findByHighlight(true);
+		for (var highlightProduct : highlightedProducts) {
+			if (highlightProduct.getStock() > 0) {
+				return modelMapper.map(highlightProduct, ProductDTO.class);				
+			}
+		}
+		throw new ResourceNotFoundException("Not available product found");
 	}
 	
 	@Override
