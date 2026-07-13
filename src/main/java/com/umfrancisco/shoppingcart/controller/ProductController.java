@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.umfrancisco.shoppingcart.model.Product;
 import com.umfrancisco.shoppingcart.payload.ProductDTO;
 import com.umfrancisco.shoppingcart.service.ProductService;
 
@@ -53,14 +52,14 @@ public class ProductController {
 	}
 	
 	@PostMapping("/admin/product")
-	public ResponseEntity<ProductDTO> addProduct(@RequestBody Product product) {
-		ProductDTO savedProduct = service.addProduct(product);
+	public ResponseEntity<ProductDTO> addProduct(@RequestBody ProductDTO productDTO) {
+		ProductDTO savedProduct = service.addProduct(productDTO);
 		return ResponseEntity.status(HttpStatus.OK).body(savedProduct);
 	}
 	
 	@PutMapping("/admin/product/{id}")
-	public ResponseEntity<ProductDTO> updateProduct(@RequestBody Product product, @PathVariable Long id) {
-		ProductDTO updatedProduct = service.updateProduct(product, id);
+	public ResponseEntity<ProductDTO> updateProduct(@RequestBody ProductDTO productDTO, @PathVariable Long id) {
+		ProductDTO updatedProduct = service.updateProduct(productDTO, id);
 		return ResponseEntity.status(HttpStatus.OK).body(updatedProduct);	
 	}
 	

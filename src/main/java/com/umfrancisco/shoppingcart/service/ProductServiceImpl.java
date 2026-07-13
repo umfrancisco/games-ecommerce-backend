@@ -24,9 +24,14 @@ public class ProductServiceImpl implements ProductService {
 	private ProductDTO mapToDTO(Product product) {
 		return modelMapper.map(product, ProductDTO.class);
 	}
+	
+	private Product mapToEntity(ProductDTO productDTO) {
+		return modelMapper.map(productDTO, Product.class);
+	}
 
 	@Override
-	public ProductDTO addProduct(Product product) {
+	public ProductDTO addProduct(ProductDTO productDTO) {
+		Product product = mapToEntity(productDTO);
 		Product savedProduct = repository.save(product);
 		return mapToDTO(savedProduct);
 	}
@@ -86,9 +91,10 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public ProductDTO updateProduct(Product product, Long id) {
+	public ProductDTO updateProduct(ProductDTO productDTO, Long id) {
 		Product existingProduct = repository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Product not found"));
+		Product product = mapToEntity(productDTO);
 		existingProduct.setName(product.getName());
 		existingProduct.setPrice(product.getPrice());
 		existingProduct.setStock(product.getStock());
