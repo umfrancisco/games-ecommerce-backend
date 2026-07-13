@@ -15,7 +15,7 @@ import com.umfrancisco.shoppingcart.service.CartService;
 
 @RestController
 @RequestMapping("/api/cart")
-@CrossOrigin(origins="http://localhost:3000")
+//@CrossOrigin(origins="http://localhost:3000")
 public class CartController {
 	
 	private final CartService service;

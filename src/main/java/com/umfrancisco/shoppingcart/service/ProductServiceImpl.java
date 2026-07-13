@@ -20,36 +20,48 @@ public class ProductServiceImpl implements ProductService {
 		this.repository = repository;
 		this.modelMapper = modelMapper;
 	}
+	
+	private ProductDTO mapToDTO(Product product) {
+		return modelMapper.map(product, ProductDTO.class);
+	}
 
 	@Override
 	public ProductDTO addProduct(Product product) {
 		Product savedProduct = repository.save(product);
-		return modelMapper.map(savedProduct, ProductDTO.class);
+		return mapToDTO(savedProduct);
 	}
 	
 	@Override
-	public List<Product> getProducts() {
+	public List<ProductDTO> getProducts() {
 		List<Product> products = repository.findAll();
+		List<ProductDTO> productDTOS = new ArrayList<>();
 		if (products.isEmpty()) {
 			throw new APIException("No product created yet");
 		}
-		return products;
+		productDTOS = products.stream()
+			.map((p) -> mapToDTO(p))
+			.toList();
+		return productDTOS;
 	}
 
 	@Override
 	public ProductDTO getProductById(Long id) {
 		Product product = repository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Product not found"));
-		return modelMapper.map(product, ProductDTO.class);
+		return mapToDTO(product);
 	}
 	
 	@Override
-	public List<Product> getProductByCategory(String category) {
+	public List<ProductDTO> getProductByCategory(String category) {
 		List<Product> productsByCategory = repository.findByCategory(category.toLowerCase());
+		List<ProductDTO> productDTOS = new ArrayList<>();
 		if (productsByCategory.isEmpty()) {
 			throw new APIException("Category not found");
 		}
-		return productsByCategory;
+		productDTOS = productsByCategory.stream()
+				.map((p) -> mapToDTO(p))
+				.toList();
+		return productDTOS;
 	}
 	
 	@Override
@@ -68,7 +80,7 @@ public class ProductServiceImpl implements ProductService {
 		List<Product> highlightedProducts = repository.findByHighlight(true);
 		List<ProductDTO> productDTOS = new ArrayList<ProductDTO>();
 		for (var prod : highlightedProducts) {
-			productDTOS.add(modelMapper.map(prod, ProductDTO.class));
+			productDTOS.add(mapToDTO(prod));
 		}
 		return productDTOS;
 	}
@@ -86,7 +98,7 @@ public class ProductServiceImpl implements ProductService {
 		existingProduct.setCategory(product.getCategory());
 		existingProduct.setHighlight(product.getHighlight());
 		Product updatedProduct = repository.save(existingProduct);
-		return modelMapper.map(updatedProduct, ProductDTO.class);
+		return mapToDTO(updatedProduct);
 	}
 
 	@Override
@@ -94,7 +106,7 @@ public class ProductServiceImpl implements ProductService {
 		Product existingProduct = repository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Product not found"));
 		repository.delete(existingProduct);
-		return modelMapper.map(existingProduct, ProductDTO.class);
+		return mapToDTO(existingProduct);
 	}
 	
 }

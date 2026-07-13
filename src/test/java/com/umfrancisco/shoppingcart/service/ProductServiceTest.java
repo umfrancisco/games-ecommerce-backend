@@ -9,6 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import com.umfrancisco.shoppingcart.model.Product;
+import com.umfrancisco.shoppingcart.payload.ProductDTO;
 import com.umfrancisco.shoppingcart.repository.ProductRepository;
 
 @ExtendWith(MockitoExtension.class)
@@ -25,7 +26,7 @@ public class ProductServiceTest {
 	    Product prod1 = new Product();
 	    Product prod2 = new Product();
 	    BDDMockito.given(repository.findAll()).willReturn(List.of(prod1, prod2));
-	    List<Product> productList = service.getProducts();
+	    List<ProductDTO> productList = service.getProducts();
 	    Assertions.assertNotNull(productList);
 	    Assertions.assertEquals(2, productList.size());
 	}

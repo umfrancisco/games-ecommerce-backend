@@ -6,9 +6,9 @@ import com.umfrancisco.shoppingcart.payload.ProductDTO;
 
 public interface ProductService {
 	ProductDTO addProduct(Product product);
-	List<Product> getProducts();
+	List<ProductDTO> getProducts();
 	ProductDTO getProductById(Long id);
-	List<Product> getProductByCategory(String category);
+	List<ProductDTO> getProductByCategory(String category);
 	ProductDTO getHighlightedProduct();
 	List<ProductDTO> getHighlightedProducts();
 	ProductDTO updateProduct(Product product, Long id);

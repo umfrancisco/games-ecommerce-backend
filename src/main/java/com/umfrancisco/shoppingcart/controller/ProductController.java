@@ -18,7 +18,7 @@ import com.umfrancisco.shoppingcart.service.ProductService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins="http://localhost:3000")
+//@CrossOrigin(origins="http://localhost:3000")
 public class ProductController {
 	
 	private final ProductService service;
@@ -28,7 +28,7 @@ public class ProductController {
 	}
 	
 	@GetMapping("/public/product")
-	public ResponseEntity<List<Product>> getProducts() {
+	public ResponseEntity<List<ProductDTO>> getProducts() {
 		return ResponseEntity.status(HttpStatus.OK).body(service.getProducts());
 	}
 	
@@ -38,7 +38,7 @@ public class ProductController {
 	}
 	
 	@GetMapping("/public/product/category/{category}")
-	public ResponseEntity<List<Product>> getProductByCategory(@PathVariable String category) {
+	public ResponseEntity<List<ProductDTO>> getProductByCategory(@PathVariable String category) {
 		return ResponseEntity.status(HttpStatus.OK).body(service.getProductByCategory(category));
 	}
 	
