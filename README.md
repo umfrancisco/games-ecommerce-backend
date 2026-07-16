@@ -19,68 +19,20 @@ Este projeto é uma API REST de um sistema de e-commerce de Jogos Eletrônicos e
 - Hibernate
 - PostgreSQL
 - Maven
-
-## Estrutura do projeto
-<pre>
-
-├── main
-│   ├── java
-│   │   └── com
-│   │       └── umfrancisco
-│   │           └── shoppingcart
-│   │               ├── config
-│   │               │   ├── JwtConstant.java
-│   │               │   ├── JwtProvider.java
-│   │               │   ├── JwtTokenValidator.java
-│   │               │   ├── SecurityConfiguration.java
-│   │               │   └── UserSession.java
-│   │               ├── controller
-│   │               │   ├── CartController.java
-│   │               │   ├── LoginController.java
-│   │               │   ├── ProductController.java
-│   │               │   └── UserController.java
-│   │               ├── model
-│   │               │   ├── AuthResponse.java
-│   │               │   ├── Cart.java
-│   │               │   ├── ItemRequest.java
-│   │               │   ├── Product.java
-│   │               │   ├── User.java
-│   │               │   └── UserRequest.java
-│   │               ├── repository
-│   │               │   ├── CartRepository.java
-│   │               │   ├── ProductRepository.java
-│   │               │   ├── RequestRepository.java
-│   │               │   └── UserRepository.java
-│   │               ├── service
-│   │               │   ├── CartServiceImpl.java
-│   │               │   ├── CartService.java
-│   │               │   ├── ProductServiceImpl.java
-│   │               │   ├── ProductService.java
-│   │               │   └── UserServiceImpl.java
-│   │               └── ShoppingCartApplication.java
-│   └── resources
-│       ├── application.properties
-│       ├── static
-│       └── templates
-└── test
-    └── java
-        └── com
-            └── umfrancisco
-                └── shoppingcart
-                    └── ShoppingCartApplicationTests.java
-
-</pre>
+- Docker
 
 ## Endpoints
 
-| Method | Endpoint                                | Description         |
-| ------ | --------------------------------------- | ------------------- |
-| GET    | /api/public/product                     | Get all products    |
-| GET    | /api/public/product/{id}                | Get product by ID   |
-| GET    | /api/public/product/category/{category} | Get product by ID   |
-| POST   | /api/admin/product                      | Create new product  |
-| PUT    | /api/admin/product/{id}                 | Update product      |
-| DELETE | /api/admin/product/{id}                 | Delete item         |
+| Method | Endpoint                                | Description                     |
+| ------ | --------------------------------------- | ------------------------------- |
+| GET    | /api/public/product                     | Get all products                |
+| GET    | /api/public/product/{id}                | Get product by ID               |
+| GET    | /api/public/product/category/{category} | Get product by category         |
+| GET    | /api/public/product/highlight/first     | Get first highlighted product   |
+| GET    | /api/public/product/highlight/all       | Get all highlighted products    |
+| POST   | /api/admin/product                      | Add new product                 |
+| PUT    | /api/admin/product/{id}                 | Update product                  |
+| DELETE | /api/admin/product/{id}                 | Delete produc                   |
 
 ## Exemplo de requisição JSON
 
