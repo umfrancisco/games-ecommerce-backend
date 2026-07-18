@@ -67,8 +67,8 @@ Este projeto é uma API REST de um sistema de e-commerce de Jogos Eletrônicos e
 ## Instalação
 
 ### 1. Clone o repositório
-git clone https://github.com/umfrancisco/games-ecommerce-backend.git
-cd games-ecommerce-backend 
+git clone https://github.com/umfrancisco/games-ecommerce-backend.git  
+cd games-ecommerce-backend  
 
 ### 2. Baixe a imagem do PostgreSQL com Docker Compose
 docker compose up   
