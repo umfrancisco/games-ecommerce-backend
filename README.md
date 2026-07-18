@@ -32,7 +32,7 @@ Este projeto é uma API REST de um sistema de e-commerce de Jogos Eletrônicos e
 | GET    | /api/public/product/highlight/all       | Get all highlighted products    |
 | POST   | /api/admin/product                      | Add new product                 |
 | PUT    | /api/admin/product/{id}                 | Update product                  |
-| DELETE | /api/admin/product/{id}                 | Delete produc                   |
+| DELETE | /api/admin/product/{id}                 | Delete product                  |
 
 ## Exemplo de requisição JSON
 
@@ -67,19 +67,22 @@ Este projeto é uma API REST de um sistema de e-commerce de Jogos Eletrônicos e
 ## Instalação
 
 ### 1. Clone o repositório
-git clone https://github.com/umfrancisco/shopping-cart-backend  
-cd shopping-cart-backend  
+git clone https://github.com/umfrancisco/games-ecommerce-backend.git
+cd games-ecommerce-backend 
 
-### 2. Configure as variáveis de ambiente
+### 2. Baixe a imagem do PostgreSQL com Docker Compose
+docker compose up   
 
-spring.datasource.url=jdbc:postgresql://localhost:5432/your_db  
+### 3. Configure as variáveis de ambiente
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/postgres  
 spring.datasource.username=postgres  
-spring.datasource.password=secret  
+spring.datasource.password=1234  
 
 spring.jpa.hibernate.ddl-auto=update  
 server.port=8080  
 
-### 3. Rode a aplicação
+### 4. Rode a aplicação
 
 Usando Spring Boot:  
 
@@ -88,7 +91,7 @@ Usando Spring Boot:
 Build com Maven:  
 
 mvn clean package  
-java -jar target/shopping-cart-0.0.1-SNAPSHOT.jar  
+java -jar target/games-ecommerce-0.0.1-SNAPSHOT.jar  
 
 
 
